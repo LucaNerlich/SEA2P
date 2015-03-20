@@ -20,7 +20,7 @@
 		echo "Es trat ein Fehler auf beim Insert: " . mysqli_error($DB);
 	}
 	echo "<h2>Ausgabe</h2>";
-	$result = mysqli_query("SELECT * FROM user");
+	$result = mysqli_query($DB,"SELECT * FROM user");
 	while ($ar = mysqli_fetch_assoc($result))
 	{
 		echo "<p>#" . $ar["user_id"] . ": " . $ar["name"] . " (" . $ar["email"] . ")";
