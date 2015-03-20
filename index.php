@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<title>PHP-Beispiel</title>
-		
 	</head>
 	<body>
 <?php
