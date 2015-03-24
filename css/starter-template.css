@@ -1,12 +1,7 @@
-body {
-    padding-top: 50px;
+#main {
+    position: relative;
 }
 
-.starter-template {
-    padding: 40px 15px;
-    text-align: center;
-}
-
-table {
-    text-align: inherit;
+#secondary {
+position: relative;
 }
