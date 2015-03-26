@@ -8,7 +8,7 @@
     Luca    --	Tester, Programmierer
     Clemens --	Analyse, Architekt, Programmierer, Tester
     Daniel  --	Projektleiter, Analyse, Tester
-    
+
 
 # THANKS
 
