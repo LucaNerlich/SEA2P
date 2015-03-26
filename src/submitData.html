@@ -51,16 +51,26 @@
 
 <?php include '/src/test.php';?>
 
-<form class="form-signin" method="post" action="submit.php">
+<form method="post" action="submit.php">
 
+<fieldset class="radios">
+    <ul>
+        <li><input type="radio" id="message" name="msg_type" value="msg" />
+            <label for="message">Nachricht</label>
+        </li>
 
+        <li><input type="radio" id="damage" name="msg_type" value="dmg" />
+            <label for="damage" />Schaden</label>
+        </li>
+    </ul>
+</fieldset>
 
 
     <div class="col-lg-6">
         <p><button class="btn btn-lg btn-primary btn-block" type="submit">Submit Data</button></p>
     </div>
     <div class="col-lg-6">
-        <p><button class="btn btn-lg btn-secondary btn-block" type="reset">Cancel</button></p>
+        <p><button class="btn btn-lg btn-secondary btn-block" type="reset">Reset</button></p>
     </div>
 
 </form>
