@@ -11,8 +11,16 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  max-width:1024px;
+  margin: 0 auto;	
+  width: 96%;
 }
+
+.bodyline
+	{
+	border:0px solid #606060;	
+	width: 100%;	
+	}
 article,
 aside,
 details,
