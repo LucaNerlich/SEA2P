@@ -1,3 +1,10 @@
+#Eigene Klassen
+.buildpath
+.project
+.settings/org.eclipse.php.core.prefs
+.settings/org.eclipse.wst.common.project.facet.core.xml
+#Rest
+
 *.class
 
 # Mobile Tools for Java (J2ME)
