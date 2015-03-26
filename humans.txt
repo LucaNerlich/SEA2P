@@ -3,7 +3,12 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Fabian  --	Tester, Programmierer, Webcontent
+    Stefan  --	Tester, Datenbank
+    Luca    --	Tester, Programmierer
+    Clemens --	Analyse, Architekt, Programmierer, Tester
+    Daniel  --	Projektleiter, Analyse, Tester
+    
 
 # THANKS
 
