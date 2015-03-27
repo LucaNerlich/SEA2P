@@ -4,3 +4,32 @@
     margin-left: auto;
     max-width: 500px; /* or 950px */
 }
+
+.radios{
+    background: none;
+    display: inline;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.radios ul{
+    background: none;
+    display: inline-block;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.radios li{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.radios label{
+    margin-right: 25px;
+    width: auto;
+}
+
+.radios input{
+    margin-top: 3px;
+}
