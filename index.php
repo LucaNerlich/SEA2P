@@ -1,20 +1,16 @@
-<?php 
+<?php
 session_start();
-if (!isset($_SESSION["state"]))
-{
-	$_SESSION["state"] = 0; // 0 = Not logged in, 1 = Logged In as Customer, 2 = Logged In as Admin
+if (!isset($_SESSION["state"])) {
+    $_SESSION["state"] = 0; // 0 = Not logged in, 1 = Logged In as Customer, 2 = Logged In as Admin
 }
 
 include "spielwiese/config.php";
 include "spielwiese/header.php";
 
-if (isset($_GET["page"]) && file_exists($_GET["page"]))
-{
-	include $_GET["page"];
-}
-else
-{
-	echo '<div class="jumbotron">
+if (isset($_GET["page"]) && file_exists($_GET["page"])) {
+    include $_GET["page"];
+} else {
+    echo '<div class="jumbotron">
   <h1>HAW Bike Tracking</h1>
   <p>Software Entwicklung 2</p>
   <p><a class="btn btn-primary btn-lg" href="src/learnMore.html" role="button">Unser Konzept</a></p>
@@ -28,7 +24,7 @@ include "spielwiese/footer.php";
 
 <?php
 // 	echo "<h1>Beispiel PHP-Datei</h1>";
-	
+
 // 	echo "<h2>Datenbankverbindung</h2>";
 
 // 	$DB = mysqli_connect ("eu-cdbr-azure-north-c.cloudapp.net", "b9e898e7fd354b", "603aec01") or die ("Keine Verbindung moeglich!");
