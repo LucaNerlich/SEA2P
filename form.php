@@ -23,7 +23,7 @@ if ($_SESSION["state"] == 0) {
     echo '                <option>Bike ausw&auml;hlen</option>';
 
     foreach ($bikes as $bike) {
-        echo '<option>' . $bike . '</option>';
+        //echo '<option>' . $bike . '</option>';
     }
 
     echo '            </select>';
