@@ -2,25 +2,9 @@
 include '../config/config.php';
 include '../config/header.php';
 
-if (isset($_POST["email"]))
-{
-	$email = escape($_POST["email"]);
-	$password = escape($_POST["password"]);
-	$user = query("SELECT * FROM client WHERE email = '$email' AND password='$password'");
-	if (sizeof($user) == 1)
-	{
-		$_SESSION["user"] = $user[0];
-		$_SESSION["state"] = 1;
-	}
-	else
-	{
-		echo message("Login fehlgeschlagen, bitte &uuml;berpr&uuml;fe deine E-Mail und dein Passwort",1);
-	}
-}
-
 if ($_SESSION["state"] == 0)
 {
-	echo "<form class='form-signin' action='signin.php' method='post'>";
+	echo "<form class='form-signin' action='signin.php?signin' method='post'>";
 	echo "<h2 class='form-signin-heading'>Please sign in</h2>";
 	echo '<label for="inputEmail" class="sr-only">Email address</label>';
     echo '<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>';
@@ -30,10 +14,10 @@ if ($_SESSION["state"] == 0)
 	
 	echo "</form>";
 }
-else
+else if (isset($_GET["signout"]))
 {
-	echo "<strong>Du bist bereits eingeloggt!</strong>";
+	echo message("Logout erfolgreich!",1);
 }
 
-include 'spielwiese/footer.php';
+include '../config/footer.php';
 ?>
