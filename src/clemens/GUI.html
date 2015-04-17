@@ -50,14 +50,14 @@
                 unterkategorieAuswahl.options[0] = new Option("weiss");
                 unterkategorieAuswahl.options[1] = new Option("carrera-marmor");
             }
-            else if (kategorieAuswahl.options[kategorieAuswahl.selectedIndex].value == "xxx") // Axel
+            else if (kategorieAuswahl.options[kategorieAuswahl.selectedIndex].value == "default") // Axel
             {
-                unterkategorieAuswahl.options[0] = new Option("Material");
+                //unterkategorieAuswahl.options[0] = new Option("Material");
             }
         }
         // Ende -->
     </script>
-    
+
 </head>
 <body>
 <div class="container" id="main" >
@@ -104,9 +104,9 @@
 
         <form name="verzeichnis">
             <select size="1" name="kategorie" onChange="update_auswahl()">
-                <option value="xxx" selected>Fensterbank w&auml;hlen</option>
-                <option value="Innenfensterbank">Innenfensterbank</option>
-                <option value="Aussenfensterbank">Aussenfensterbank</option>
+                <option value="default" selected>Bitte ausw&auml;hlen</option>
+                <option value="message">Nachricht senden</option>
+                <option value="damagereport">Schaden melden</option>
             </select>
             <br>
             <br>
@@ -114,7 +114,7 @@
                 <option selected>Material</option>
             </select>
 
-            <select name="aufbuege" size="1">
+            <select size="1" name="aufbuege">
                 <option selected>Aufbüge</option>
             </select></form>
 
