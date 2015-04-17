@@ -20,7 +20,7 @@ if ($_SESSION["state"] == 1) {
 
         $bikes = query("SELECT * FROM bike WHERE bike.client_id = " . $_SESSION['user']['client_id']);
 
-        echo '            <label for="bike">Bike:</label> ';
+        echo '            <label for="bike">bike:</label> ';
         echo '            <select name="bike" size="1">';
         echo '                <option>Bike ausw&auml;hlen</option>';
 
@@ -33,15 +33,26 @@ if ($_SESSION["state"] == 1) {
         echo '<br>';
 
         echo '            <input type="hidden" name="step" value="1">';
-        echo '            <input type="submit" value="send">';
+        echo '            <input type="submit" value="next">';
         echo '        </form>';
         echo '</div>';
 
         $step = 2;
 
-    } else {
+    } elseif (isset($_POST['step']) == 1) {
 
+        echo '<div id="damagereport">';
+        echo '<form action="form.php" method="post">';
+        echo '<label for="bike">bike:</label> ';
         echo $_POST['bike'];
+
+        echo '<label for="topic">topic:</label> ';
+        echo '<input type="text" name="topic" size="30" maxlength="30">';
+
+        echo '<input type="hidden" name="step" value="2">';
+        echo '<input type="submit" value="send">';
+        echo '</form>';
+        echo '</div>';
 
 //        echo '            <label for="serial">S/N:</label> ';
 //        if ($_POST['name'] != "Bike ausw&auml;hlen") {
