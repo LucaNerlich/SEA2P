@@ -48,7 +48,7 @@ if ($_SESSION["state"] == 1) {
 
         echo '<label for="bike">s/n:</label> ';
         $serial = query("SELECT serial_number FROM bike WHERE bike.name = '" . $_POST['bike'] . "' AND bike.client_id = " . $_SESSION['user']['client_id']);
-        echo $serial;
+        echo $serial['serial_number'];
 
         echo '<br>';
 
