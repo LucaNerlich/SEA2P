@@ -85,8 +85,8 @@ include '../config/header.php';
                         </tr>
                         <tr>
                             <th scope="row">5</th>
-                            <td>daniel</td>
-                            <td>Sommerlig</td>
+                            <td>Daniel</td>
+                            <td>Sommerling</td>
                             <td>Projektleiter, Analyse</td>
                         </tr>
                         </tbody>
