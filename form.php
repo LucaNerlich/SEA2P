@@ -16,14 +16,14 @@ if ($_SESSION["state"] == 0) {
 
 /* BIKE */
 
-    $bikes = query("SELECT serial_number FROM bike WHERE bike.client_id = " . $_SESSION["user"]["client_id"]);
+    //$bikes = query("SELECT serial_number FROM bike WHERE bike.client_id = " . $_SESSION['user']['client_id']);
 
     echo '            <label for="bike">Bike:</label> ';
     echo '            <select name="bike" size="1">';
     echo '                <option>Bike ausw&auml;hlen</option>';
 
     foreach ($bikes as $bike) {
-        //echo '<option>' . $bike . '</option>';
+        echo '<option>' . $bike . '</option>';
     }
 
     echo '            </select>';
