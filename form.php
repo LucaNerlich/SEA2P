@@ -37,8 +37,6 @@ if ($_SESSION["state"] == 1) {
         echo '</form>';
         echo '</div>';
 
-        $step = 2;
-
     } elseif (isset($_POST['step']) == 1) {
 
         echo '<div id="damagereport">';
