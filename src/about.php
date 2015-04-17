@@ -37,6 +37,7 @@ include '../config/header.php';
         </div>
 
         <div>
+            <br>
             <a class="btn btn-primary btn-lg" href="/src/presentation2.php" role="button">PowerPoint 1</a>
             <a class="btn btn-primary btn-lg" href="../404.php" role="button">PowerPoint 2</a>
         </div>
@@ -142,6 +143,15 @@ include '../config/header.php';
                             </ul>
                         </section>
                     </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Technische Bausteine</h4>
+                </div>
+                <div id="main" class="panel-body">
+                        <img src="../assets/images/Architektur-Technische%20Bausteine.png" style="width:90%"/>
                 </div>
             </div>
         </div>
