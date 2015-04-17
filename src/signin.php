@@ -4,7 +4,7 @@ include '../config/header.php';
 
 if ($_SESSION["state"] == 0)
 {
-	echo "<form class='form-signin' action='signin.php?signin' method='post'>";
+	echo "<form class='form-signin' action='signin.php?signin' method='post' style='width: 40%'>";
 	echo "<h2 class='form-signin-heading'>Please sign in</h2>";
 	echo '<label for="inputEmail" class="sr-only">Email address</label>';
     echo '<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>';
