@@ -1,8 +1,9 @@
 <?php
-include "spielwiese/config.php";
-include "spielwiese/header.php";
+include 'config/config.php';
+include 'config/header.php';
 
-if (isset($_GET["page"]) && file^_exists($_GET["page"])) {
+/*
+if (isset($_GET["page"]) && file ^ _exists($_GET["page"])) {
     include $_GET["page"];
 } else {
     echo '<div class="jumbotron">
@@ -11,11 +12,38 @@ if (isset($_GET["page"]) && file^_exists($_GET["page"])) {
   <p><a class="btn btn-primary btn-lg" href="src/learnMore.html" role="button">Unser Konzept</a></p>
 </div>';
 }
-
-include "spielwiese/footer.php";
-
-
+*/
 ?>
+
+<div align="center">
+    <div class="jumbotron">
+        <h1>HAW Bike Tracking</h1>
+
+        <p>Software Entwicklung 2</p>
+
+        <p><a class="btn btn-primary btn-lg" href="src/about.php" role="button">Unser Konzept</a></p>
+
+        <p><a class="btn btn-primary btn-lg" href="src/submitData.html" role="button">Datenübermittlung</a></p>
+
+        <p><a class="btn btn-primary btn-lg" href="src/signin.html" role="button">Sign In</a></p>
+
+        <p><a class="btn btn-primary btn-lg" href="src/signup.html" role="button">Sign Up</a></p>
+
+        <p><a class="btn btn-primary btn-lg" href="http://141.22.29.119:9000/hipergate" role="button">Hipergate</a></p>
+    </div>
+
+    <div class="well well-sm">
+        Hier entsteht ganz großes Kino!
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
 
 <?php
 // 	echo "<h1>Beispiel PHP-Datei</h1>";
@@ -38,4 +66,5 @@ include "spielwiese/footer.php";
 // 	{
 // 		echo "<p>#" . $ar["user_id"] . ": " . $ar["name"] . " (" . $ar["email"] . ")";
 // 	}
+include 'config/footer.php';
 ?>

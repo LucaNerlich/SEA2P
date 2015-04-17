@@ -13,8 +13,8 @@
 
     <!-- Bootstrap core CSS -->
     <!-- Custom styles for this template -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-2.1.3.min.js"></script>
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-2.1.3.min.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">Home</a>
+            <a class="navbar-brand" href="/index.php">Home</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
