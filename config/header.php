@@ -40,9 +40,10 @@
             </button>
             <a class="navbar-brand" href="/index.php">Home</a>
         </div>
+        
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-            	<li><a href="about.php">About</a></li>
+            	<li><a href="src/about.php">About</a></li>
             	<?php 
             	
             		if ($_SESSION["state"] == 0)
