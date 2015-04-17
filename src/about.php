@@ -2,7 +2,6 @@
 include '../config/config.php';
 include '../config/header.php';
 ?>
-
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -30,7 +29,6 @@ include '../config/header.php';
     </head>
     <body>
 
-
     <br>
 
     <div class="panel panel-default" align="center">
@@ -39,8 +37,8 @@ include '../config/header.php';
         </div>
 
         <div>
-            <a class="btn btn-primary btn-lg" href="/src/luca/ppp1.html" role="button">PPP1</a>
-            <a class="btn btn-primary btn-lg" href="/src/submitData.html" role="button">PPP2</a>
+            <a class="btn btn-primary btn-lg" href="/src/presentation1.php" role="button">PPP1</a>
+            <a class="btn btn-primary btn-lg" href="404.html" role="button">PPP2</a>
 
         </div>
 
