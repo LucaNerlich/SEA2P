@@ -35,7 +35,7 @@ if ($_SESSION["state"] == 1) {
         echo '<br>';
 
         echo '<input type="hidden" name="step" value="1">';
-        echo '<input type="submit" value="next">';
+        echo '<input class="submit" type="submit" value="next">';
         echo '</form>';
 
     } elseif ($_POST['step'] == 1) {
@@ -88,7 +88,7 @@ if ($_SESSION["state"] == 1) {
         echo '<br>';
 
         echo '<input type="hidden" name="step" value="2">';
-        echo '<input type="submit" value="send">';
+        echo '<input class="submit" type="submit" value="send">';
         echo '</form>';
 
     } elseif ($_POST['step'] == 2) {
