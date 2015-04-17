@@ -12,7 +12,7 @@ if ($_SESSION["state"] == 1) {
         echo '<form action="contact.php" method="post">';
 
         echo '<table>';
-        echo '<tr><td>choose:</td>';
+        echo '<tr><td></td>';
         echo '<td><select name="type" size="1">';
 //echo '                <option>---</option>';
         echo '<option>Schadenmeldung</option>';
@@ -35,7 +35,7 @@ if ($_SESSION["state"] == 1) {
 
         echo '<tr><td><input type="hidden" name="step" value="1"></td>';
         echo '<td><input class="submit" type="submit" value="next"></td></tr>';
-        
+
         echo '</form>';
 
     } elseif ($_POST['step'] == 1) {
@@ -83,7 +83,7 @@ if ($_SESSION["state"] == 1) {
 
         echo '<br>';
 
-        echo '<textarea name="message" cols="50" rows="10"></textarea>';
+        echo '<textarea name="message" cols="40" rows="10" style="width: 90%"></textarea>';
 
         echo '<br>';
 
