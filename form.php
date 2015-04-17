@@ -10,7 +10,7 @@ echo '               <option>Message</option>';
 echo '            </select>';
 
 echo '            <input type="submit" value="send">';
-echo '        </form>'';
+echo '        </form>';
 
 include 'config/footer.php';
 ?>
