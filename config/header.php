@@ -14,7 +14,8 @@ $src_extend = strpos($_SERVER["REQUEST_URI"], "src/")?"../":"";
     <link rel="icon" href="/favicon.ico">
     
     <title>HAW Bike Tracking</title>
-
+	<link href="<?php echo $src_extend; ?>css/style.css" rel="stylesheet" type="text/css">
+    
     <!-- Bootstrap core CSS -->
     <!-- Custom styles for this template -->
     <link href="<?php echo $src_extend; ?>css/bootstrap.css" rel="stylesheet" type="text/css">
