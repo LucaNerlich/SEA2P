@@ -39,6 +39,7 @@ if ($_SESSION["state"] == 1) {
 
     } elseif ($_POST['step'] == 1) {
 
+/* ID */
         echo '<div id="damagereport">';
         echo '<form action="contact.php" method="post">';
         echo '<label for="bike">id:</label> ';
@@ -46,6 +47,14 @@ if ($_SESSION["state"] == 1) {
 
         echo '<br>';
 
+/* NAME */
+        echo '<label for="name">bike:</label> ';
+        $serial = query("SELECT name FROM bike WHERE bike.bike_id = '" . $_POST['bike'] ."'");
+        echo $serial[0]['name'];
+
+        echo '<br>';
+
+/* S/N */
         echo '<label for="serial_number">s/n:</label> ';
         $serial = query("SELECT serial_number FROM bike WHERE bike.bike_id = '" . $_POST['bike'] ."'");
         echo $serial[0]['serial_number'];
