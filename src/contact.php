@@ -73,6 +73,8 @@ if ($_SESSION["state"] == 1) {
             echo '<option value="' . $article["article_id"] . '">' . $article["name"] . '</option>';
         }
 
+        echo '</select>';
+
         echo '<br>';
 
         /* TOPIC */
