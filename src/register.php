@@ -43,7 +43,7 @@ if ($_SESSION["state"] == 1 && ($_SESSION["user"]["email"] == "luca.nerlich@haw-
     echo ' <input type="text" name="telephoneNumber" class="form-control" placeholder="Telephone No." aria-label="Telephone No.">';
     echo '</div>';
 
-    echo '<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>';
+    echo '<button class="btn btn-lg btn-primary btn-block" type="submit">Register User</button>';
 
     echo "</form>";
 } else {
