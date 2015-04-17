@@ -10,32 +10,32 @@ if ($_SESSION["state"] == 1) {
     if (!isset($_POST['step'])) {
 
         echo '<form action="contact.php" method="post">';
-        echo '<select name="type" size="1">';
+
+        echo '<table>';
+        echo '<tr><td>choose:</td>';
+        echo '<td><select name="type" size="1">';
 //echo '                <option>---</option>';
         echo '<option>Schadenmeldung</option>';
 //echo '               <option>Message</option>';
-        echo '</select>';
+        echo '</select></td>';
 
-        echo '<br>';
-
-        /* BIKE */
+/* BIKE */
 
         $bikes = query("SELECT * FROM bike WHERE bike.client_id = '" . $_SESSION['user']['client_id'] . "'");
 
-        echo '            <label for="bike">bike:</label> ';
-        echo '            <select name="bike" size="1">';
-        echo '                <option>Bike ausw&auml;hlen</option>';
+        echo '<tr><td><label for="bike">bike:</label></td>';
+        echo '<td><select name="bike" size="1">';
+        echo '<option>Bike ausw&auml;hlen</option>';
 
         foreach ($bikes as $bike) {
             echo '<option value="' . $bike["bike_id"] . '">' . $bike["name"] . '</option>';
         }
 
-        echo '</select>';
+        echo '</select></td></tr>';
 
-        echo '<br>';
-
-        echo '<input type="hidden" name="step" value="1">';
-        echo '<input class="submit" type="submit" value="next">';
+        echo '<tr><td><input type="hidden" name="step" value="1"></td>';
+        echo '<td><input class="submit" type="submit" value="next"></td></tr>';
+        
         echo '</form>';
 
     } elseif ($_POST['step'] == 1) {
