@@ -18,7 +18,7 @@ if ($_SESSION["state"] == 1) {
 
         /* BIKE */
 
-        $bikes = query("SELECT * FROM bike WHERE bike.client_id = " . $_SESSION['user']['client_id']);
+        $bikes = query("SELECT * FROM bike WHERE bike.client_id = '" . $_SESSION['user']['client_id'] . "'");
 
         echo '            <label for="bike">bike:</label> ';
         echo '            <select name="bike" size="1">';
@@ -61,6 +61,17 @@ if ($_SESSION["state"] == 1) {
 
         echo '<br>';
 
+/* ARTICLES */
+        $articles = query("SELECT article.article_id, article.name FROM bike_article, article WHERE bike_article.bike_id = '" . $_POST['bike'] .
+            "' AND bike_article.article_id = article.article_id");
+
+        echo '<label for="article">article:</label> ';
+        echo '<select name="article" size="1">';
+        echo '<option>Artikel ausw&auml;hlen</option>';
+
+        foreach ($articles as $article) {
+            echo '<option value="' . $article["article_id"] . '">' . $article["name"] . '</option>';
+        }
 
         echo '<label for="topic">topic:</label> ';
         echo '<input type="text" name="topic" size="30" maxlength="30">';
