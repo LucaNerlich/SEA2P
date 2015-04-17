@@ -3,6 +3,8 @@ include '../config/config.php';
 include '../config/header.php';
 ?>
 
+<!-- http://www.sequencejs.com/themes/sliding-horizontal-parallax/ -->
+
     <!DOCTYPE html>
     <html>
     <head>
