@@ -28,7 +28,6 @@ include '../config/header.php';
         <![endif]-->
     </head>
     <body>
-
     <br>
 
     <div class="panel panel-default" align="center">
@@ -38,7 +37,11 @@ include '../config/header.php';
 
         <div>
             <br>
-            <a class="btn btn-primary btn-lg" href="../assets/files/Lastenheft.pdf" role="button" download="Download Lastenheft.pdf">Download Lastenheft</a>
+            <a class="btn btn-primary btn-lg" href="../assets/files/Lastenheft.pdf" role="button"
+               download="Download Lastenheft.pdf">Download Lastenheft</a>
+            <a class="btn btn-primary btn-lg" href="../assets/files/User%20Stories.pdf" role="button"
+               download="Download User_Stories.pdf">Download User Stories</a>
+            <br>
             <a class="btn btn-primary btn-lg" href="/src/presentation2.php" role="button">PowerPoint 1</a>
             <a class="btn btn-primary btn-lg" href="../404.php" role="button">PowerPoint 2</a>
         </div>
@@ -152,7 +155,7 @@ include '../config/header.php';
                     <h4 class="panel-title">Technische Bausteine</h4>
                 </div>
                 <div id="main" class="panel-body">
-                        <img src="../assets/images/Architektur-Technische%20Bausteine.png" style="width:90%"/>
+                    <img src="../assets/images/Architektur-Technische%20Bausteine.png" style="width:90%"/>
                 </div>
             </div>
         </div>
