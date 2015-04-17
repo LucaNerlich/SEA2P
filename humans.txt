@@ -7,7 +7,7 @@
     Stefan  --	Tester, Datenbank
     Luca    --	Tester, Programmierer
     Clemens --	Analyse, Architekt, Programmierer, Tester
-    Daniel  --	Projektleiter, Analyse, Tester
+    daniel  --	Projektleiter, Analyse, Tester
 
 
 # THANKS
