@@ -38,7 +38,7 @@ include '../config/header.php';
 
         <div>
             <a class="btn btn-primary btn-lg" href="/src/presentation2.php" role="button">PowerPoint 1</a>
-            <a class="btn btn-primary btn-lg" href="../404.html" role="button">PowerPoint 2</a>
+            <a class="btn btn-primary btn-lg" href="../404.php" role="button">PowerPoint 2</a>
         </div>
 
         <div class="panel-body">
