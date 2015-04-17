@@ -20,6 +20,44 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+    <script language="Javascript">
+        <!-- Start
+        function update_auswahl()
+        {
+            var kategorieAuswahl = document.forms.verzeichnis.kategorie;
+            var unterkategorieAuswahl = document.forms.verzeichnis.unterkategorie;
+            var aufbuegeAuswahl = document.forms.verzeichnis.aufbuege; // Axel
+            unterkategorieAuswahl.options.length = 0; // DropDown Menü entleeren
+            aufbuegeAuswahl.options.length = 0; // DropDown Menü entleeren
+
+            if (kategorieAuswahl.options[kategorieAuswahl.selectedIndex].value == "Aussenfensterbank")
+            {
+                unterkategorieAuswahl.options[0] = new Option("weiss");
+                unterkategorieAuswahl.options[1] = new Option("EV1 (silber farben)");
+                unterkategorieAuswahl.options[2] = new Option("mittelbronze");
+                unterkategorieAuswahl.options[3] = new Option("dunkelbronze");
+                unterkategorieAuswahl.options[4] = new Option("blank");
+                // Ab hier wird das untere gefuellt
+                aufbuegeAuswahl.options[0] = new Option("irgendwas");
+                aufbuegeAuswahl.options[1] = new Option("nochwas");
+                aufbuegeAuswahl.options[2] = new Option("wenn schon, denn schon");
+                aufbuegeAuswahl.options[3] = new Option("FIN");
+            }
+            else if (kategorieAuswahl.options[kategorieAuswahl.selectedIndex].value == "Innenfensterbank")
+            {
+                unterkategorieAuswahl.options[0] = new Option("weiss");
+                unterkategorieAuswahl.options[1] = new Option("carrera-marmor");
+            }
+            else if (kategorieAuswahl.options[kategorieAuswahl.selectedIndex].value == "default") // Axel
+            {
+                //unterkategorieAuswahl.options[0] = new Option("Material");
+            }
+        }
+        // Ende -->
+    </script>
+
 </head>
 <body>
 <div class="container" id="main" >
@@ -61,6 +99,24 @@
 
             <input type="submit" value="send">
         </form>
+
+
+
+        <form name="verzeichnis">
+            <select size="1" name="kategorie" onChange="update_auswahl()">
+                <option value="default" selected>Bitte ausw&auml;hlen</option>
+                <option value="message">Nachricht senden</option>
+                <option value="damagereport">Schaden melden</option>
+            </select>
+            <br>
+            <br>
+            <select size="1" name="unterkategorie">
+                <option selected>Material</option>
+            </select>
+
+            <select size="1" name="aufbuege">
+                <option selected>Aufbüge</option>
+            </select></form>
 
     </div>
 
