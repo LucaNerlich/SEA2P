@@ -38,10 +38,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">Home</a>
+            <a class="navbar-brand" href="/index.php">Home</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
+            	<li><a href="about.php">About</a></li>
             	<?php 
             	
             		if ($_SESSION["state"] == 0)
@@ -50,7 +51,7 @@
             		}
             		else
             		{
-						echo '<li><a href="/src/clemens/GUI.html">Clemens_Tests</a></li>';    
+						echo '<li><a href="/src/about">About</a></li>';    
 						echo '<li><a href="/src/luca/luca_test.html">Luca_Testss</a></li>';
             		}
             	?>
