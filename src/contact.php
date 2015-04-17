@@ -8,11 +8,11 @@ if ($_SESSION["state"] == 1) {
 
         echo '<div id="damagereport">';
         echo '<form action="contact.php" method="post">';
-        echo '            <select name="type" size="1">';
+        echo '<select name="type" size="1">';
 //echo '                <option>---</option>';
-        echo '                <option>Schadenmeldung</option>';
+        echo '<option>Schadenmeldung</option>';
 //echo '               <option>Message</option>';
-        echo '            </select>';
+        echo '</select>';
 
         echo '<br>';
 
@@ -39,7 +39,7 @@ if ($_SESSION["state"] == 1) {
 
     } elseif ($_POST['step'] == 1) {
 
-/* ID */
+        /* ID */
         echo '<div id="damagereport">';
         echo '<form action="contact.php" method="post">';
         echo '<label for="bike">id:</label> ';
@@ -47,21 +47,21 @@ if ($_SESSION["state"] == 1) {
 
         echo '<br>';
 
-/* NAME */
+        /* NAME */
         echo '<label for="name">bike:</label> ';
-        $serial = query("SELECT name FROM bike WHERE bike.bike_id = '" . $_POST['bike'] ."'");
+        $serial = query("SELECT name FROM bike WHERE bike.bike_id = '" . $_POST['bike'] . "'");
         echo $serial[0]['name'];
 
         echo '<br>';
 
-/* S/N */
+        /* S/N */
         echo '<label for="serial_number">s/n:</label> ';
-        $serial = query("SELECT serial_number FROM bike WHERE bike.bike_id = '" . $_POST['bike'] ."'");
+        $serial = query("SELECT serial_number FROM bike WHERE bike.bike_id = '" . $_POST['bike'] . "'");
         echo $serial[0]['serial_number'];
 
         echo '<br>';
 
-/* ARTICLES */
+        /* ARTICLES */
         $articles = query("SELECT article.article_id, article.name FROM bike_article, article WHERE bike_article.bike_id = '" . $_POST['bike'] .
             "' AND bike_article.article_id = article.article_id");
 
@@ -75,6 +75,7 @@ if ($_SESSION["state"] == 1) {
 
         echo '<br>';
 
+        /* TOPIC */
         echo '<label for="topic">topic:</label> ';
         echo '<input type="text" name="topic" size="30" maxlength="30">';
 
