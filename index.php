@@ -21,8 +21,6 @@ if (isset($_GET["page"]) && file ^ _exists($_GET["page"])) {
 
         <p>Software Entwicklung 2</p>
 
-        <p><a class="btn btn-primary btn-lg" href="src/about.php" role="button">Unser Konzept</a></p>
-
         <p><a class="btn btn-primary btn-lg" href="src/submitData.html" role="button">Datenübermittlung</a></p>
 
         <p><a class="btn btn-primary btn-lg" href="src/signin.html" role="button">Sign In</a></p>

@@ -14,58 +14,35 @@ include '../config/header.php';
         <meta name="author" content="">
         <link rel="icon" href="/favicon.ico">
 
-        <title>ppp1</title>
+        <title>Presentation 1</title>
 
-        <link href="../css/bootstrap.css" rel="stylesheet">
-        <link href="../css/bootstrap-custom.css" rel="stylesheet">
-        <link href="../css/slider.css" rel="stylesheet">
+        <link href="../css/ninja-slider.css" rel="stylesheet" type="text/css" />
+        <script src="../js/ninja-slider.js" type="text/javascript"></script>
+
     </head>
     <body>
 
-    <p>LUCALUCAULUCa</p>
-    <!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+    <div>
+        <!--start-->
+        <div id='ninja-slider'>
+            <ul>
+                <li><div data-image="../assets/images/ppp1/Folie1.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie2.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie3.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie4.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie5.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie6.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie7.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie8.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie9.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie10.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie11.PNG"></div></li>
+                <li><div data-image="../assets/images/ppp1/Folie12.PNG"></div></li>
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('/assets/images/ppp1/Folie1.PNG');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('/assets/images/ppp1/Folie2.PNG');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('/assets/images/ppp1/Folie3.PNG');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
-            </div>
+            </ul>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-
-    </header>
+        <!--end-->
+    </div>
 
     </body>
     </html>
