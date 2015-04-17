@@ -157,56 +157,7 @@ function NinjaSlider(e) {
         s = {};
         D = null;
         Rb(true);
-        v = {
-            handleEvent: function (a) {
-                Sb(a);
-                a.preventManipulation && a.preventManipulation();
-                switch (a.type) {
-                    case N:
-                        this.a(a);
-                        break;
-                    case F:
-                        this.b(a);
-                        break;
-                    case G:
-                        fb(this.c(a));
-                        break;
-                    case"webkitTransitionEnd":
-                    case"msTransitionEnd":
-                    case"oTransitionEnd":
-                    case"otransitionend":
-                    case"transitionend":
-                        fb(T(a.target));
-                        break;
-                    case"resize":
-                        l();
-                        A = r(ib, 0)
-                }
-            }, a: function (b) {
-                var a = L ? b : b.touches[0];
-                S = {x: a.pageX, y: a.pageY, time: +new Date};
-                D = null;
-                s = {};
-                d[o](F, this, false);
-                d[o](G, this, false)
-            }, b: function (a) {
-                if (!L && (a.touches[f] > 1 || a.scale && a.scale !== 1))return;
-                var c = L ? a : a.touches[0];
-                s = {x: c.pageX - S.x, y: c.pageY - S.y};
-                if (D === null)D = !!(D || Math.abs(s.x) < Math.abs(s.y));
-                if (!D) {
-                    a.preventDefault();
-                    l();
-                    !k && M(s.x + b * -q, -1)
-                }
-            }, c: function () {
-                var f = +new Date - S.time, c = f < 250 && Math.abs(s.x) > 20 || Math.abs(s.x) > q / 2, a = !b && s.x > 0 || b == g - 1 && s.x < 0;
-                if (e.touchCircular)a = false;
-                if (!D)if (c && !a)x(b + (s.x > 0 ? -1 : 1)); else!k && M(b * -q, m);
-                d.removeEventListener(F, v, false);
-                d.removeEventListener(G, v, false)
-            }
-        };
+
         if (u)if (n.b) {
             Hb(v);
             n.c && d[o](N, v, false);
