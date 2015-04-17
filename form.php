@@ -41,7 +41,7 @@ if ($_SESSION["state"] == 1) {
 
     } else {
 
-        echo $_POST['name'];
+        echo $_POST['bike'];
 
 //        echo '            <label for="serial">S/N:</label> ';
 //        if ($_POST['name'] != "Bike ausw&auml;hlen") {
