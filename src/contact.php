@@ -25,7 +25,7 @@ if ($_SESSION["state"] == 1) {
         echo '                <option>Bike ausw&auml;hlen</option>';
 
         foreach ($bikes as $bike) {
-            echo '<option>' . $bike["name"] . '</option>';
+            echo '<option value="' . $bike["bike_id"] . '">' . $bike["name"] . '</option>';
         }
 
         echo '</select>';
@@ -41,15 +41,14 @@ if ($_SESSION["state"] == 1) {
 
         echo '<div id="damagereport">';
         echo '<form action="contact.php" method="post">';
-        echo '<label for="bike">bike:</label> ';
+        echo '<label for="bike">id:</label> ';
         echo $_POST['bike'];
 
         echo '<br>';
 
-        echo '<label for="bike">s/n:</label> ';
-        //$serial = query("SELECT serial_number FROM bike WHERE bike.name = '" . $_POST['bike'] . "' AND bike.client_id = " . $_SESSION['user']['client_id']);
-        $serial = query("SELECT serial_number FROM bike WHERE bike.name = '" . $_POST['bike'] . "'");
-        echo $serial['serial_number'];
+        echo '<label for="serial_number">s/n:</label> ';
+        $serial = query("SELECT serial_number FROM bike WHERE bike.id = '" . $_POST['bike']);
+        echo $serial[0]['serial_number'];
 
         echo '<br>';
 
