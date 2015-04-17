@@ -2,7 +2,7 @@
 include 'config/config.php';
 include 'config/header.php';
 
-if ($_SESSION["state"] == 0) {
+if ($_SESSION["state"] == 1) {
 
     echo '<div id="damagereport">';
     echo '<form action="form.php" method="post">';
@@ -16,7 +16,7 @@ if ($_SESSION["state"] == 0) {
 
 /* BIKE */
 
-    //$bikes = query("SELECT serial_number FROM bike WHERE bike.client_id = " . $_SESSION['user']['client_id']);
+    $bikes = query("SELECT serial_number FROM bike WHERE bike.client_id = " . $_SESSION['user']['client_id']);
 
     echo '            <label for="bike">Bike:</label> ';
     echo '            <select name="bike" size="1">';
