@@ -42,53 +42,46 @@ if ($_SESSION["state"] == 1) {
 
         /* ID */
         echo '<form action="contact.php" method="post">';
-        echo '<label for="bike">id:</label> ';
-        echo $_POST['bike'];
 
-        echo '<br>';
+        echo '<table style="width: 90%">';
+        echo '<tr><td><label for="bike">id:</label></td>';
+        echo '<td>' . $_POST['bike'] . '</td></tr>';
 
         /* NAME */
-        echo '<label for="name">bike:</label> ';
+        echo '<tr><td><label for="name">bike:</label></td>';
         $serial = query("SELECT name FROM bike WHERE bike.bike_id = '" . $_POST['bike'] . "'");
-        echo $serial[0]['name'];
-
-        echo '<br>';
+        echo '<td>' . $serial[0]['name'] . '</td></tr>';
 
         /* S/N */
-        echo '<label for="serial_number">s/n:</label> ';
+        echo '<tr><td><label for="serial_number">s/n:</label></td>';
         $serial = query("SELECT serial_number FROM bike WHERE bike.bike_id = '" . $_POST['bike'] . "'");
-        echo $serial[0]['serial_number'];
-
-        echo '<br>';
+        echo '<td>' . $serial[0]['serial_number'] . '</td></tr>';
 
         /* ARTICLES */
         $articles = query("SELECT article.article_id, article.name FROM bike_article, article WHERE bike_article.bike_id = '" . $_POST['bike'] .
             "' AND bike_article.article_id = article.article_id");
 
-        echo '<label for="article">article:</label> ';
-        echo '<select name="article" size="1">';
+        echo '<tr><td><label for="article">article:</label></td>';
+        echo '<td><select name="article" size="1">';
         echo '<option>Artikel ausw&auml;hlen</option>';
 
         foreach ($articles as $article) {
             echo '<option value="' . $article["article_id"] . '">' . $article["name"] . '</option>';
         }
 
-        echo '</select>';
-
-        echo '<br>';
+        echo '</select></td></tr>';
 
         /* TOPIC */
-        echo '<label for="topic">topic:</label> ';
-        echo '<input type="text" name="topic" size="30" maxlength="30">';
+        echo '<tr><td><label for="topic">topic:</label></td>';
+        echo '<td><input type="text" name="topic" size="30" maxlength="30"></td></tr>';
 
-        echo '<br>';
+        /* MESSAGE */
+        echo '<td><td><textarea name="message" maxlength="500" rows="10" style="width: 90%"></textarea></td></tr>';
 
-        echo '<textarea name="message" cols="40" rows="10" style="width: 90%"></textarea>';
-
-        echo '<br>';
-
-        echo '<input type="hidden" name="step" value="2">';
-        echo '<input class="submit" type="submit" value="send">';
+        /* BUTTON */
+        echo '<tr><td><input type="hidden" name="step" value="2"></td>';
+        echo '<td><input class="submit" type="submit" value="send"></td></tr>';
+        echo '</table>';
         echo '</form>';
 
     } elseif ($_POST['step'] == 2) {
