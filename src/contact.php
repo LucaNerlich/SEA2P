@@ -47,10 +47,12 @@ if ($_SESSION["state"] == 1) {
         echo '<br>';
 
         echo '<label for="bike">s/n:</label> ';
-        $serial = query("SELECT serial_number FROM bike WHERE bike.name = '" . $_POST['bike'] . "' AND bike.client_id = " . $_SESSION['user']['client_id']);
+        //$serial = query("SELECT serial_number FROM bike WHERE bike.name = '" . $_POST['bike'] . "' AND bike.client_id = " . $_SESSION['user']['client_id']);
+        $serial = query("SELECT serial_number FROM bike WHERE bike.name = '" . $_POST['bike'] . "'");
         echo $serial['serial_number'];
 
         echo '<br>';
+
 
         echo '<label for="topic">topic:</label> ';
         echo '<input type="text" name="topic" size="30" maxlength="30">';
