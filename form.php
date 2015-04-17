@@ -28,13 +28,13 @@ if ($_SESSION["state"] == 1) {
             echo '<option>' . $bike["name"] . '</option>';
         }
 
-        echo '            </select>';
+        echo '</select>';
 
         echo '<br>';
 
-        echo '            <input type="hidden" name="step" value="1">';
-        echo '            <input type="submit" value="next">';
-        echo '        </form>';
+        echo '<input type="hidden" name="step" value="1">';
+        echo '<input type="submit" value="next">';
+        echo '</form>';
         echo '</div>';
 
         $step = 2;
@@ -46,13 +46,25 @@ if ($_SESSION["state"] == 1) {
         echo '<label for="bike">bike:</label> ';
         echo $_POST['bike'];
 
+        echo '<br>';
+
         echo '<label for="topic">topic:</label> ';
         echo '<input type="text" name="topic" size="30" maxlength="30">';
+
+        echo '<br>';
+
+        echo '<textarea name="message" cols="50" rows="10"></textarea>';
+
+        echo '<br>';
 
         echo '<input type="hidden" name="step" value="2">';
         echo '<input type="submit" value="send">';
         echo '</form>';
         echo '</div>';
+
+    } elseif (isset($_POST['step']) == 2) {
+
+        echo 'DONE';
 
 //        echo '            <label for="serial">S/N:</label> ';
 //        if ($_POST['name'] != "Bike ausw&auml;hlen") {
