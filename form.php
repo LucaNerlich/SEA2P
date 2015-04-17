@@ -33,10 +33,10 @@ if ($_SESSION["state"] == 1) {
     echo '            <label for="serial">S/N:</label> ';
     if ($_POST['name']!="Bike ausw&auml;hlen") {
 
-        $serial = query("SELECT serial_number FROM bike WHERE bike.name = " . $_POST['name'] ." AND bike.client_id = " . $_SESSION['user']['client_id']);
+        $serial = query("SELECT serial_number FROM bike WHERE bike.name = '" . $_POST['name'] ."' AND bike.client_id = " . $_SESSION['user']['client_id']);
 
         echo $serial;
-        
+
     }
 
     //echo '            <input type="text" id="serial" size="10" maxlength="10" pattern="[0-9]{10}">';
