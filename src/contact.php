@@ -2,11 +2,13 @@
 include '../config/config.php';
 include '../config/header.php';
 
+echo '<div id="damagereport" class="jumbotron">';
+echo "<h1>Kontakt mit Hersteller aufnehmen</h1>";
+
 if ($_SESSION["state"] == 1) {
 
     if (!isset($_POST['step'])) {
 
-        echo '<div id="damagereport" class="jumbotron">';
         echo '<form action="contact.php" method="post">';
         echo '<select name="type" size="1">';
 //echo '                <option>---</option>';
@@ -35,12 +37,10 @@ if ($_SESSION["state"] == 1) {
         echo '<input type="hidden" name="step" value="1">';
         echo '<input type="submit" value="next">';
         echo '</form>';
-        echo '</div>';
 
     } elseif ($_POST['step'] == 1) {
 
         /* ID */
-        echo '<div id="damagereport" class="jumbotron">';
         echo '<form action="contact.php" method="post">';
         echo '<label for="bike">id:</label> ';
         echo $_POST['bike'];
@@ -90,7 +90,6 @@ if ($_SESSION["state"] == 1) {
         echo '<input type="hidden" name="step" value="2">';
         echo '<input type="submit" value="send">';
         echo '</form>';
-        echo '</div>';
 
     } elseif ($_POST['step'] == 2) {
 
@@ -112,6 +111,8 @@ if ($_SESSION["state"] == 1) {
 } else {
     echo 'ausgeloggt!';
 }
+
+echo '</div>';
 
 include '../config/footer.php';
 ?>
