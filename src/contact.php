@@ -7,7 +7,7 @@ if ($_SESSION["state"] == 1) {
     if (!isset($_POST['step'])) {
 
         echo '<div id="damagereport">';
-        echo '<form action="form.php" method="post">';
+        echo '<form action="contact.php" method="post">';
         echo '            <select name="type" size="1">';
 //echo '                <option>---</option>';
         echo '                <option>Schadenmeldung</option>';
@@ -40,7 +40,7 @@ if ($_SESSION["state"] == 1) {
     } elseif ($_POST['step'] == 1) {
 
         echo '<div id="damagereport">';
-        echo '<form action="form.php" method="post">';
+        echo '<form action="contact.php" method="post">';
         echo '<label for="bike">bike:</label> ';
         echo $_POST['bike'];
 
