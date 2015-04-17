@@ -4,9 +4,7 @@ include 'config/header.php';
 
 if ($_SESSION["state"] == 1) {
 
-    $step = 1;
-
-    if ($step = 1) {
+    if (!isset($_POST['step']) == 1) {
 
         echo '<div id="damagereport">';
         echo '<form action="form.php" method="post">';
@@ -34,13 +32,14 @@ if ($_SESSION["state"] == 1) {
 
         echo '<br>';
 
+        echo '            <input type="hidden" name="step" value="1">';
         echo '            <input type="submit" value="send">';
         echo '        </form>';
         echo '</div>';
 
         $step = 2;
 
-    } else if ($step = 2) {
+    } else {
 
         echo $_POST['name'];
 
