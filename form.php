@@ -4,7 +4,7 @@ include 'config/header.php';
 
 if ($_SESSION["state"] == 1) {
 
-    if (!isset($_POST['step']) == 1) {
+    if (!isset($_POST['step'])) {
 
         echo '<div id="damagereport">';
         echo '<form action="form.php" method="post">';
@@ -37,7 +37,7 @@ if ($_SESSION["state"] == 1) {
         echo '</form>';
         echo '</div>';
 
-    } elseif (isset($_POST['step']) == 1) {
+    } elseif ($_POST['step'] == 1) {
 
         echo '<div id="damagereport">';
         echo '<form action="form.php" method="post">';
@@ -60,7 +60,7 @@ if ($_SESSION["state"] == 1) {
         echo '</form>';
         echo '</div>';
 
-    } elseif (isset($_POST['step']) == 2) {
+    } elseif ($_POST['step'] == 2) {
 
         echo 'DONE';
 
