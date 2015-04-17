@@ -5,6 +5,8 @@
 	background-color: #D3FFD1;
 	border: 1px solid #034000;
 	color: #034000;
+	padding: 4px;
+	border-radius: 20px;
 }
 
 .yellow
@@ -12,6 +14,8 @@
 	background-color: #FBFFCC;
 	border: 1px solid #696B52;
 	color: #696B52;
+	padding: 4px;
+	border-radius: 20px;
 }
 
 .red
@@ -19,12 +23,16 @@
 	background-color: #FFCCCC;
 	border: 1px solid #400000;
 	color: #400000;
+	padding: 4px;
+	border-radius: 20px;
 }
 .grey
 {
 	background-color: #EBEBEB;
 	border: 1px solid #333333;
 	color: #333333;
+	padding: 4px;
+	border-radius: 20px;
 }
 
 table td

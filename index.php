@@ -13,28 +13,71 @@ if (isset($_GET["page"]) && file ^ _exists($_GET["page"])) {
 </div>';
 }
 */
+if ($_SESSION["state"] == 0)
+{
 ?>
-
 <div align="center">
     <div class="jumbotron">
         <h1>HAW Bike Tracking</h1>
 
-        <p>Software Entwicklung 2</p>
-
-        <p><a class="btn btn-primary btn-lg" href="src/submitData.html" role="button">Datenübermittlung</a></p>
-
-        <p><a class="btn btn-primary btn-lg" href="src/signin.html" role="button">Sign In</a></p>
-
-        <p><a class="btn btn-primary btn-lg" href="src/signup.html" role="button">Sign Up</a></p>
-
-        <p><a class="btn btn-primary btn-lg" href="http://141.22.29.119:9000/hipergate" role="button">Hipergate</a></p>
-    </div>
-
-    <div class="well well-sm">
-        Hier entsteht ganz großes Kino!
+        <p>Bitte logge dich zun&auml;chst ein!</p>
     </div>
 </div>
 
+<?php 
+}
+else
+{
+	echo "<div class='jumbotron'>";
+	echo "<h1>Dein Dashboard</h1>";
+	
+	echo "<h2>Deine Bikes</h2>";
+	echo "<table class='table table-striped'>";
+	echo "<tr><th>Name</th><th>Serial Number</th><th>Kilometers</th></tr>";
+	$bikes = query("SELECT bike.*, sum(dh.kilometers) as current_km FROM bike LEFT JOIN drive_history dh ON bike.bike_id = dh.bike_id WHERE bike.client_id = " . $_SESSION["user"]["client_id"] . " GROUP BY dh.bike_id");
+	foreach ($bikes as $bike)
+	{
+		$parts = query("SELECT ba.*, a.* FROM bike_article ba LEFT JOIN article a ON ba.article_id = a.article_id WHERE ba.bike_id = " . $bike["bike_id"]);
+		echo "<tr><td>" . $bike["name"] . "</td><td>" . $bike["serial_number"] . "</td><td>" . $bike["current_km"] . " km</td></tr>";
+		if (sizeof($parts) > 0)
+		{
+			echo "<tr><td colspan='3'>";
+			echo "<table class='table table-striped'>";
+			echo "<tr><th>Name</th><th>Wear Out</th><th>Current KM</th><th>Percentage</th></tr>";
+			foreach($parts as $part)
+			{
+				if ($part["wearout"] != null)
+				{
+					$p_zahl = round(($part["current_km"] / $part["wearout"]) * 100);
+					$percentage = $p_zahl . " %";
+					if ($p_zahl < 50)
+					{
+						$percentage = message($percentage,1,false);
+					}
+					elseif ($p_zahl < 90)
+					{
+						$percentage = message($percentage,2,false);
+					}
+					else
+					{
+						$percentage = message($percentage,3,false);
+					}
+				}
+				else
+				{
+					$percentage = "<i>not available</i>";
+				}
+				echo "<tr><td>" . $part["name"] . "</td><td>" . ($part["wearout"]==null?"-":$part["wearout"]) . "</td><td>" . $part["current_km"] . "</td><td>$percentage</td></tr>";
+			}
+			echo "</table>";
+			echo "</td></tr>";
+		}
+	}
+	echo "</table>";
+	
+	echo "</div>";
+}
+?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

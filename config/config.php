@@ -5,7 +5,7 @@ if (!isset($_SESSION["state"])) {
 	$_SESSION["state"] = 0; // 0 = Not logged in, 1 = Logged In as Customer, 2 = Logged In as Admin
 }
 
-function message($str, $type = 0)
+function message($str, $type = 0, $big = false)
 {
 	switch ($type)
 	{
@@ -22,7 +22,7 @@ function message($str, $type = 0)
 			$class = "grey";
 	}
 	
-	return "<p class='$class'>$str</p>";
+	return "<" . ($big?"p":"span") . " class='$class'>$str</" . ($big?"p":"span") . ">";
 }
 
 function addMessage($str)
