@@ -38,6 +38,7 @@ include '../config/header.php';
 
         <div>
             <br>
+            <a class="btn btn-primary btn-lg" href="../assets/files/Lastenheft.pdf" role="button" download="Download Lastenheft.pdf">Download Lastenheft</a>
             <a class="btn btn-primary btn-lg" href="/src/presentation2.php" role="button">PowerPoint 1</a>
             <a class="btn btn-primary btn-lg" href="../404.php" role="button">PowerPoint 2</a>
         </div>
