@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-$src_extend = strpos($_SERVER["REQUEST_URI"], "/src/")?"../":"";
+$src_extend = strpos($_SERVER["REQUEST_URI"], "src/")?"../":"";
 ?>
 
 <html lang="en">
