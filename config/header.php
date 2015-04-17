@@ -73,6 +73,7 @@ if (isset($_GET["signout"])) {
                     echo '<li><a href="' . $src_extend . 'src/trip.php">Kilometer eintragen</a></li>';
                     echo '<li><a href="' . $src_extend . 'src/contact.php">Kontakt aufnehmen</a></li>';
                     echo '<li><a href="http://141.22.29.119:9000/hipergate">Hipergate</a></li>';
+                    echo '<li><a href="' . $src_extend . 'src/register.php">Register User</a></li>';
                     echo '<li><a href="' . $src_extend . 'src/signin.php?signout">Sign Out</a></li>';
                 }
                 ?>

@@ -90,7 +90,7 @@ include '../config/header.php';
                         <tr>
                             <th scope="row">5</th>
                             <td>Daniel</td>
-                            <td>Sommerling</td>
+                            <td>Sommerlig</td>
                             <td>Projektleiter, Analyse</td>
                         </tr>
                         </tbody>
