@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <?php 
 $src_extend = strpos($_SERVER["REQUEST_URI"], "src/")?"../":"";
+if (isset($_GET["signout"]))
+{
+	unset($_SESSION["user"]);
+	$_SESSION["state"] = 0;
+		addMessage(message("Logout erfolgreich!",1));
+}
+else if (isset($_GET["signin"]) && isset($_POST["email"]))
+{
+	$email = escape($_POST["email"]);
+	$password = md5($_POST["password"]);
+	$user = query("SELECT * FROM client WHERE email = '$email' AND password='$password'");
+	if (sizeof($user) == 1)
+	{
+		$_SESSION["user"] = $user[0];
+		$_SESSION["state"] = 1;
+		addMessage(message("Login erfolgreich!",1));
+	}
+	else
+	{
+		addMessage(message("Login fehlgeschlagen, bitte &uuml;berpr&uuml;fe deine E-Mail und dein Passwort",2));
+	}
+}
 ?>
 
 <html lang="en">
@@ -58,6 +80,7 @@ $src_extend = strpos($_SERVER["REQUEST_URI"], "src/")?"../":"";
             		else
             		{  
 						echo '<li><a href="' . $src_extend . 'src/luca/luca_test.html">Luca_Testss</a></li>';
+            			echo '<li><a href="' . $src_extend . 'src/signin.php?signout">Sign Out</a></li>';
             		}
             	?>
             </ul>
@@ -68,6 +91,13 @@ $src_extend = strpos($_SERVER["REQUEST_URI"], "src/")?"../":"";
 <div align="center">
 
 <?php 
-
+if (isset($_SESSION["messages"]))
+{
+	foreach ($_SESSION["messages"] as $message)
+	{
+		echo $message;
+	}
+	unset($_SESSION["messages"]);
+}
 
 ?>

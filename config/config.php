@@ -25,4 +25,13 @@ function message($str, $type = 0)
 	return "<p class='$class'>$str</p>";
 }
 
+function addMessage($str)
+{
+	if (!isset($_SESSION["messages"]))
+	{
+		$_SESSION["messages"] = array();
+	}
+	array_push($_SESSION["messages"],$str);
+}
+
 ?>
