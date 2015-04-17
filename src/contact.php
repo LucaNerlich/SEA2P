@@ -47,7 +47,7 @@ if ($_SESSION["state"] == 1) {
         echo '<br>';
 
         echo '<label for="serial_number">s/n:</label> ';
-        $serial = query("SELECT serial_number FROM bike WHERE bike.bike_id = '" . $_POST['bike']);
+        $serial = query("SELECT serial_number FROM bike WHERE bike.bike_id = '" . $_POST['bike'] ."'");
         echo $serial[0]['serial_number'];
 
         echo '<br>';
