@@ -73,6 +73,8 @@ if ($_SESSION["state"] == 1) {
             echo '<option value="' . $article["article_id"] . '">' . $article["name"] . '</option>';
         }
 
+        echo '<br>';
+
         echo '<label for="topic">topic:</label> ';
         echo '<input type="text" name="topic" size="30" maxlength="30">';
 
