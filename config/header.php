@@ -79,7 +79,8 @@ else if (isset($_GET["signin"]) && isset($_POST["email"]))
             		}
             		else
             		{  
-						echo '<li><a href="' . $src_extend . 'src/luca/luca_test.html">Luca_Testss</a></li>';
+						echo '<li><a href="' . $src_extend . 'src/trip.php">Kilometer eintragen</a></li>';
+						echo '<li><a href="' . $src_extend . 'src/contact.php">Kontakt aufnehmen</a></li>';
             			echo '<li><a href="' . $src_extend . 'src/signin.php?signout">Sign Out</a></li>';
             		}
             	?>
