@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+.green
+{
+	background-color: #D3FFD1;
+	border: 1px solid #034000;
+	color: #034000;
+}
+
+.yellow
+{
+	background-color: #FBFFCC;
+	border: 1px solid #696B52;
+	color: #696B52;
+}
+
+.red
+{
+	background-color: #FFCCCC;
+	border: 1px solid #400000;
+	color: #400000;
+}
+.grey
+{
+	background-color: #EBEBEB;
+	border: 1px solid #333333;
+	color: #333333;
+}

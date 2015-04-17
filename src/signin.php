@@ -1,6 +1,6 @@
 <?php
-include 'spielwiese/config.php';
-include 'spielwiese/header.php';
+include '../config/config.php';
+include '../config/header.php';
 
 if (isset($_POST["email"]))
 {
