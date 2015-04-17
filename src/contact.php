@@ -1,6 +1,6 @@
 <?php
-include 'config/config.php';
-include 'config/header.php';
+include '../config/config.php';
+include '../config/header.php';
 
 if ($_SESSION["state"] == 1) {
 
@@ -77,7 +77,9 @@ if ($_SESSION["state"] == 1) {
 
     }
 
+} else {
+    echo 'ausgeloggt!';
 }
 
-include 'config/footer.php';
+include '../config/footer.php';
 ?>
