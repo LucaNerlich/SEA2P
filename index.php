@@ -1,13 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION["state"])) {
-    $_SESSION["state"] = 0; // 0 = Not logged in, 1 = Logged In as Customer, 2 = Logged In as Admin
-}
-
 include "spielwiese/config.php";
 include "spielwiese/header.php";
 
-if (isset($_GET["page"]) && file_exists($_GET["page"])) {
+if (isset($_GET["page"]) && file^_exists($_GET["page"])) {
     include $_GET["page"];
 } else {
     echo '<div class="jumbotron">
