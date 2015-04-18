@@ -15,7 +15,7 @@ for (var i = 0; i < 13; i ++)
 // translate Height To Canvas
 function tH(pH)
 {
-	return (h-20)-(pH/max*(h-20)) + 10;
+	return (h-30)-(pH/max*(h-30)) + 15;
 }
 
 function redraw()
