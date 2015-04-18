@@ -124,7 +124,7 @@ else
 	$topics = query("SELECT  * from topic WHERE client_id = " . $_SESSION["user"]["client_id"] . " ORDER BY active DESC, created_on desc");
 	if (sizeof($topics) == 0)
 	{
-		echo "<tr><td colspan='4' style='text-align:center;'><i>Keine offnenen oder geschlossenen Tickets bisher.</i></td></tr>";
+		echo "<tr><td colspan='4' style='text-align:center;'><i>Keine offenen oder geschlossenen Tickets bisher.</i></td></tr>";
 	}
 	else
 	{
