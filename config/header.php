@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 $src_extend = strpos($_SERVER["REQUEST_URI"], "src/") ? "../" : "";
 if (isset($_GET["signout"])) {
@@ -13,12 +12,13 @@ if (isset($_GET["signout"])) {
         $_SESSION["user"] = $user[0];
         $_SESSION["state"] = 1;
         addMessage(message("Login erfolgreich!", 1));
+        header("Location: ../index.php");
     } else {
         addMessage(message("Login fehlgeschlagen, bitte &uuml;berpr&uuml;fe deine E-Mail und dein Passwort", 2));
     }
 }
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
