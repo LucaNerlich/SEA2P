@@ -31,6 +31,9 @@ else
 	echo "<div class='jumbotron'>";
 	echo "<h1>Dein Dashboard</h1>";
 	
+	/*
+	 * Aktuelle Kilometer der Fahrrad Teile
+	 */
 	echo "<h2>Deine Bikes</h2>";
 	echo "<table class='table table-striped'>";
 	echo "<tr><th>Name</th><th>Serial Number</th><th>Kilometers</th></tr>";
@@ -73,6 +76,65 @@ else
 			echo "</td></tr>";
 		}
 	}
+	echo "</table>";
+	/*
+	 * Fitnesstatistik
+	 */
+	echo "<h2>Deine Fitness</h2>";
+	echo "<table class='table table-striped'>";
+	
+	$dates = query("SELECT SUM(kilometers) as summe, MONTH(created_on) as monat, year(created_on) as jahr FROM drive_history WHERE client_id = " . $_SESSION["user"]["client_id"] . " AND created_on > DATE_SUB(CURDATE(),INTERVAL 1 YEAR) GROUP BY MONTH(created_on) ORDER BY year(created_on), month(created_on) ASC");
+	echo "<tr>";
+	foreach ($dates as $date)
+	{
+		$dates_c[$date["jahr"] . $date["monat"]] = $date["summe"];
+	}
+	
+	//$dates_conf
+	for ($i = 12; $i >= 0; $i --)
+	{
+		echo "<th>" . date("Y-m", mktime(0, 0, 0, date("m")-$i, date("d"),   date("Y"))) . "</th>";
+		//echo $i . "--";
+		//echo date("Y-m", mktime(0, 0, 0, date("m")-$i, date("d"),   date("Y")));
+	}
+	echo "</tr><tr>";
+	for ($i = 12; $i >= 0; $i --)
+	{
+		$c_str = date("Yn", mktime(0, 0, 0, date("m")-$i, date("d"),   date("Y")));
+		echo "<td>" . (isset($dates_c[$c_str])?$dates_c[$c_str]:"0") . "</td>";
+	//echo $i . "--";
+	//echo date("Y-m", mktime(0, 0, 0, date("m")-$i, date("d"),   date("Y")));
+	}
+	echo "</tr>";
+	//print_r($dates_c);
+// 	foreach ($dates as $date)
+// 	{
+// 		echo "<tr><td>" . $bike["name"] . "</td><td>" . $bike["serial_number"] . "</td><td>" . $bike["current_km"] . " km</td></tr>";
+// 		//for ($i = 0; $i )
+// 	}
+	echo "</table>";
+	
+	
+	/*
+	 * Aktuelle und vergangene Tickets
+	 */
+	echo "<h2>Deine Tickets</h2>";
+	echo "<table class='table table-striped'>";
+	echo "<tr><th>Subject</th><th>Type</th><th>Created On</th><th></th></tr>";
+	$topics = query("SELECT  * from topic WHERE client_id = " . $_SESSION["user"]["client_id"] . " ORDER BY active DESC, created_on desc");
+	if (sizeof($topics) == 0)
+	{
+		echo "<tr><td colspan='4' style='text-align:center;'><i>Keine offnenen oder geschlossenen Tickets bisher.</i></td></tr>";
+	}
+	else
+	{
+		foreach ($topics as $topic)
+		{
+			echo "<tr><td>" . $topic["subject"] . "</td><td>" . ($topic["type"] == 1?"Schaden":"Kontakt") . "</td><td>" . $topic["created_on"] . " km</td><td>" . ($topic["active"] == 1?"<img src='graphic/y.png'>":"") . "</td></tr>";
+		
+		}
+	}
+	
 	echo "</table>";
 	
 	echo "</div>";
