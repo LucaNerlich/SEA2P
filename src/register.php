@@ -7,7 +7,6 @@ if ($_SESSION["user"]["email"] == "luca.nerlich@haw-hamburg.de" || $_SESSION["us
 ) {
     echo '<div id="phone" class="centered">';
     echo "<h2 class='form-signin-heading'>Please provide the following information</h2>";
-    echo '<div style="width: 90%">';
     echo "<form class='form-signin' action='register.php' method='post'>";
 
     echo '<label for="inputEmail" class="sr-only">E-Mail address</label>';
