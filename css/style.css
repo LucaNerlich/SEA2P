@@ -80,3 +80,9 @@ table td
 	position:relative;
 	top:1px;
 }
+
+@media screen and (max-device-width: 360px){
+    div#phone{
+        width: 100%;
+    }
+}
