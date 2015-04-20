@@ -5,6 +5,7 @@ include '../config/header.php';
 if ($_SESSION["user"]["email"] == "luca.nerlich@haw-hamburg.de" || $_SESSION["user"]["email"] == "daniel.sommerlig@haw-hamburg.de" ||
     $_SESSION["user"]["email"] == "fabian.simroth@haw-hamburg.de" || $_SESSION["user"]["email"] == "clemens.rassbach@haw-hamburg.de"
 ) {
+    echo '<div id="phone" class="centered">';
     echo "<h2 class='form-signin-heading'>Please provide the following information</h2>";
     echo '<div style="width: 90%">';
     echo "<form class='form-signin' action='register.php' method='post'>";
@@ -48,6 +49,7 @@ if ($_SESSION["user"]["email"] == "luca.nerlich@haw-hamburg.de" || $_SESSION["us
     echo '<button class="btn btn-lg btn-primary btn-block" type="submit" style="margin: 2px">Register User</button>';
     echo '</div>';
     echo "</form>";
+    echo '</div>';
 } else {
     echo message("Fehler beim Anlegen eines neuen Nutzers.");
 }
