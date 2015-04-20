@@ -81,8 +81,13 @@ table td
 	top:1px;
 }
 
+.centered{
+    width: 50%;
+}
+
 @media screen and (max-device-width: 360px){
     div#phone{
         width: 100%;
     }
 }
+
