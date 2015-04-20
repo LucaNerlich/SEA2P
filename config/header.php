@@ -63,7 +63,7 @@ if (isset($_GET["signout"])) {
         </div>
 
         <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-left">
                 <li><a href="<?php echo $src_extend; ?>src/about.php">About</a></li>
                 <?php
 
@@ -74,14 +74,18 @@ if (isset($_GET["signout"])) {
                     echo '<li><a href="' . $src_extend . 'src/contact.php">Kontakt aufnehmen</a></li>';
                     echo '<li><a href="http://141.22.29.119:9000/hipergate">Hipergate</a></li>';
 
-                    if ($_SESSION["user"]["email"] == "luca.nerlich@haw-hamburg.de" || $_SESSION["user"]["email"] == "daniel.sommerlig@haw-hamburg.de"  ||
-                        $_SESSION["user"]["email"] == "fabian.simroth@haw-hamburg.de" || $_SESSION["user"]["email"] == "clemens.rassbach@haw-hamburg.de") {
+                    if ($_SESSION["user"]["email"] == "luca.nerlich@haw-hamburg.de" || $_SESSION["user"]["email"] == "daniel.sommerlig@haw-hamburg.de" ||
+                        $_SESSION["user"]["email"] == "fabian.simroth@haw-hamburg.de" || $_SESSION["user"]["email"] == "clemens.rassbach@haw-hamburg.de"
+                    ) {
                         echo '<li><a href="' . $src_extend . 'src/register.php">Register User</a></li>';
                     }
-
-                    echo '<li><a href="' . $src_extend . 'src/signin.php?signout">Sign Out</a></li>';
-                    echo '<li style="padding:15px 10px;color: #eee;">Moin, ' . $_SESSION["user"]["surname"] . '</li>';
                 }
+                ?>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <?php
+                echo '<li><a href="' . $src_extend . 'src/signin.php?signout">Sign Out</a></li>';
+                echo '<li style="padding:15px 10px;color: #eee;">Moin, ' . $_SESSION["user"]["surname"] . '</li>';
                 ?>
             </ul>
         </div>
