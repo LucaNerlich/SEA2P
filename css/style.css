@@ -89,5 +89,9 @@ table td
     div#phone{
         width: 98%;
     }
+
+    table#phone{
+        width: 98%;
+    }
 }
 

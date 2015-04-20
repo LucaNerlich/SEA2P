@@ -75,8 +75,7 @@ if ($_SESSION["state"] == 0) {
     echo "<div class='panel panel-default'>";
     echo "<div class='panel-heading'><h2>Deine Fitness</h2></div>";
     echo "<div class='panel-body'>";
-    echo '<div id="phone">';
-    echo "<table class='table table-striped'>";
+    echo "<table class='table table-striped' id='phone'>";
 
     $dates = query("SELECT SUM(kilometers) as summe, MONTH(created_on) as monat, year(created_on) as jahr FROM drive_history WHERE client_id = " . $_SESSION["user"]["client_id"] . " AND created_on > DATE_SUB(CURDATE(),INTERVAL 1 YEAR) GROUP BY MONTH(created_on) ORDER BY year(created_on), month(created_on) ASC");
     echo "<tr>";
@@ -119,7 +118,6 @@ if ($_SESSION["state"] == 0) {
     }
     echo '</script>';
     echo "<script src='js/fitness_stat.js'></script>";
-    echo '</div>';
     echo "</div>";
     echo "</div>";
     /*
