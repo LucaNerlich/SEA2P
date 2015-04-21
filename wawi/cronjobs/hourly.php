@@ -1,0 +1,5 @@
+<?
+
+include("supportmails.php");
+
+?>

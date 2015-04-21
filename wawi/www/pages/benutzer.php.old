@@ -1,0 +1,60 @@
+<?
+include ("_gen/user.php");
+
+class Benutzer extends GenUser {
+  var $app;
+  
+  function Benutzer($app) {
+    //parent::GenUser($app);
+    $this->app=&$app;
+
+    $this->app->ActionHandlerInit($this);
+
+    $this->app->ActionHandler("create","UserCreate");
+    $this->app->ActionHandler("edit","UserEdit");
+    $this->app->ActionHandler("list","UserList");
+
+    $this->app->ActionHandlerListen(&$app);
+
+    $this->app = $app;
+  }
+
+
+  function UserCreate()
+  {
+    $this->UserMenu();
+    parent::UserCreate();
+  }
+
+  function UserList()
+  {
+    $this->UserMenu();
+    parent::UserList();
+  }
+
+  function UserMenu()
+  {
+    $id = $this->app->Secure->GetGET("id");
+    $this->app->Tpl->Add(KURZUEBERSCHRIFT,"Benutzer");
+    $this->app->erp->MenuEintrag("index.php?module=benutzer&action=create","Benutzer anlegen");
+    if($this->app->Secure->GetGET("action")=="list")
+    $this->app->erp->MenuEintrag("index.php?module=einstellungen&action=list","Zur&uuml;ck zur &Uuml;bersicht");
+    else
+    $this->app->erp->MenuEintrag("index.php?module=benutzer&action=list","Zur&uuml;ck zur &Uuml;bersicht");
+  }
+
+
+  function UserEdit()
+  {
+    $this->UserMenu();
+
+    parent::UserEdit();
+  }
+
+
+
+
+
+}
+
+?>

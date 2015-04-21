@@ -1,0 +1,9 @@
+1. Leere MySQL Datenbank + Zugang erstellen / besorgen
+2. aktuelle .tar.gz entpacken
+3. per Browser auf auf Verzeichnis gehen
+4. setup durchfuehren (trotz Hinweis der Rechte (diese muessen passen) weiter klicken)
+5. Der Webserver-Pfad sollte dringend auf www gesetzte werden, so
+dass die Firmen kritischen Dateien auf gar keinen Fall durch eine fehlerhafte
+.htaccess Datei jemals online stehen (es geht primaer um den Ordner userdata und conf).
+
+

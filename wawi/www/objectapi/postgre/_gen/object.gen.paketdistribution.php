@@ -1,0 +1,171 @@
+<?php
+
+class ObjGenPaketdistribution
+{
+
+  private  $id;
+  private  $bearbeiter;
+  private  $zeit;
+  private  $paketannahme;
+  private  $adresse;
+  private  $artikel;
+  private  $menge;
+  private  $vpe;
+  private  $etiketten;
+  private  $bemerkung;
+  private  $bestellung_position;
+  private  $logdatei;
+
+  public $app;            //application object 
+
+  public function ObjGenPaketdistribution($app)
+  {
+    $this->app = $app;
+  }
+
+  public function Select($id)
+  {
+    if(is_numeric($id))
+      $result = $this->app->DB->SelectArr("SELECT * FROM paketdistribution WHERE (id = '$id')");
+    else
+      return -1;
+
+$result = $result[0];
+
+    $this->id=$result[id];
+    $this->bearbeiter=$result[bearbeiter];
+    $this->zeit=$result[zeit];
+    $this->paketannahme=$result[paketannahme];
+    $this->adresse=$result[adresse];
+    $this->artikel=$result[artikel];
+    $this->menge=$result[menge];
+    $this->vpe=$result[vpe];
+    $this->etiketten=$result[etiketten];
+    $this->bemerkung=$result[bemerkung];
+    $this->bestellung_position=$result[bestellung_position];
+    $this->logdatei=$result[logdatei];
+  }
+
+  public function Create()
+  {
+    $sql = "INSERT INTO paketdistribution (id,bearbeiter,zeit,paketannahme,adresse,artikel,menge,vpe,etiketten,bemerkung,bestellung_position,logdatei)
+      VALUES(DEFAULT, '{$this->bearbeiter}', ".(($this->zeit=='' || $this->zeit=='--') ? 'NOW()' : "'".$this->zeit."'").", ".((is_numeric($this->paketannahme)) ? $this->paketannahme : '0').", ".((is_numeric($this->adresse)) ? $this->adresse : '0').", ".((is_numeric($this->artikel)) ? $this->artikel : '0').", ".((is_numeric($this->menge)) ? $this->menge : '0').", '{$this->vpe}', ".((is_numeric($this->etiketten)) ? $this->etiketten : '0').", '{$this->bemerkung}', ".((is_numeric($this->bestellung_position)) ? $this->bestellung_position : '0').", ".(($this->logdatei=='' || $this->logdatei=='--') ? 'NOW()' : "'".$this->logdatei."'").")"; 
+
+    $this->app->DB->Insert($sql);
+    $this->id = $this->app->DB->GetInsertID();
+  }
+
+  public function Update()
+  {
+    if(!is_numeric($this->id))
+      return -1;
+
+    $sql = "UPDATE paketdistribution SET
+      bearbeiter='{$this->bearbeiter}',
+      zeit=".(($this->zeit=='' || $this->zeit=='--') ? 'NOW()' : "'".$this->zeit."'").",
+      paketannahme=".((is_numeric($this->paketannahme)) ? $this->paketannahme : '0').",
+      adresse=".((is_numeric($this->adresse)) ? $this->adresse : '0').",
+      artikel=".((is_numeric($this->artikel)) ? $this->artikel : '0').",
+      menge=".((is_numeric($this->menge)) ? $this->menge : '0').",
+      vpe='{$this->vpe}',
+      etiketten=".((is_numeric($this->etiketten)) ? $this->etiketten : '0').",
+      bemerkung='{$this->bemerkung}',
+      bestellung_position=".((is_numeric($this->bestellung_position)) ? $this->bestellung_position : '0').",
+      logdatei=".(($this->logdatei=='' || $this->logdatei=='--') ? 'NOW()' : "'".$this->logdatei."'")."
+      WHERE (id='{$this->id}')";
+
+    $this->app->DB->Update($sql);
+  }
+
+  public function Delete($id="")
+  {
+    if(is_numeric($id))
+    {
+      $this->id=$id;
+    }
+    else
+      return -1;
+
+    $sql = "DELETE FROM paketdistribution WHERE (id='{$this->id}')";
+    $this->app->DB->Delete($sql);
+
+    $this->id="";
+    $this->bearbeiter="";
+    $this->zeit="";
+    $this->paketannahme="";
+    $this->adresse="";
+    $this->artikel="";
+    $this->menge="";
+    $this->vpe="";
+    $this->etiketten="";
+    $this->bemerkung="";
+    $this->bestellung_position="";
+    $this->logdatei="";
+  }
+
+  public function Copy()
+  {
+    $this->id = "";
+    $this->Create();
+  }
+
+ /** 
+   Mit dieser Funktion kann man einen Datensatz suchen 
+   dafuer muss man die Attribute setzen nach denen gesucht werden soll
+   dann kriegt man als ergebnis den ersten Datensatz der auf die Suche uebereinstimmt
+   zurueck. Mit Next() kann man sich alle weiteren Ergebnisse abholen
+   **/ 
+
+  public function Find()
+  {
+    //TODO Suche mit den werten machen
+  }
+
+  public function FindNext()
+  {
+    //TODO Suche mit den alten werten fortsetzen machen
+  }
+
+ /** Funktionen um durch die Tabelle iterieren zu koennen */ 
+
+  public function Next()
+  {
+    //TODO: SQL Statement passt nach meiner Meinung nach noch nicht immer
+  }
+
+  public function First()
+  {
+    //TODO: SQL Statement passt nach meiner Meinung nach noch nicht immer
+  }
+
+ /** dank dieser funktionen kann man die tatsaechlichen werte einfach 
+  ueberladen (in einem Objekt das mit seiner klasse ueber dieser steht)**/ 
+
+  function SetId($value) { $this->id=$value; }
+  function GetId() { return $this->id; }
+  function SetBearbeiter($value) { $this->bearbeiter=$value; }
+  function GetBearbeiter() { return $this->bearbeiter; }
+  function SetZeit($value) { $this->zeit=$value; }
+  function GetZeit() { return $this->zeit; }
+  function SetPaketannahme($value) { $this->paketannahme=$value; }
+  function GetPaketannahme() { return $this->paketannahme; }
+  function SetAdresse($value) { $this->adresse=$value; }
+  function GetAdresse() { return $this->adresse; }
+  function SetArtikel($value) { $this->artikel=$value; }
+  function GetArtikel() { return $this->artikel; }
+  function SetMenge($value) { $this->menge=$value; }
+  function GetMenge() { return $this->menge; }
+  function SetVpe($value) { $this->vpe=$value; }
+  function GetVpe() { return $this->vpe; }
+  function SetEtiketten($value) { $this->etiketten=$value; }
+  function GetEtiketten() { return $this->etiketten; }
+  function SetBemerkung($value) { $this->bemerkung=$value; }
+  function GetBemerkung() { return $this->bemerkung; }
+  function SetBestellung_Position($value) { $this->bestellung_position=$value; }
+  function GetBestellung_Position() { return $this->bestellung_position; }
+  function SetLogdatei($value) { $this->logdatei=$value; }
+  function GetLogdatei() { return $this->logdatei; }
+
+}
+
+?>
