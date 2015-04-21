@@ -83,11 +83,13 @@ if ($_SESSION["state"] == 0) {
         $dates_c[$date["jahr"] . $date["monat"]] = $date["summe"];
     }
 
+    $month = date("m");
+    $year = date("Y");
+    echo "<tr><th colspan='" . (13-$month) . "'>" . ($year - 1) . "</th><th colspan='" . ($month) . "'>" . ($year) . "</th></tr>";
     //$dates_conf
-    for ($i = 12; $i >= 0; $i--) {
-        echo "<th>" . date("M\nY", mktime(0, 0, 0, date("m") - $i, date("d"), date("Y"))) . "</th>";
-        //echo $i . "--";
-        //echo date("Y-m", mktime(0, 0, 0, date("m")-$i, date("d"),   date("Y")));
+    for ($i = 12; $i >= 0; $i--)
+    {
+        echo "<th style='align:center;'><span style='font-size:larger;'>" . date("m", mktime(0, 0, 0, date("m") - $i, date("d"), date("Y"))) . "</span></th>";
     }
     echo "</tr><tr>";
     $statData = array();
