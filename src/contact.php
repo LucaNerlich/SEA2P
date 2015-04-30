@@ -70,8 +70,8 @@ if ($_SESSION["state"] == 1) {
 
             /* NAME */
             echo '<tr><td><label for="name">bike:</label></td>';
-            $serial = query("SELECT name FROM bike WHERE bike.bike_id = '" . $_POST['bike'] . "'");
-            echo '<td>' . $serial[0]['name'] . '</td></tr>';
+            $name = query("SELECT name FROM bike WHERE bike.bike_id = '" . $_POST['bike'] . "'");
+            echo '<td>' . $name[0]['name'] . '</td></tr>';
 
             /* S/N */
             echo '<tr><td><label for="serial_number">s/n:</label></td>';
@@ -109,6 +109,9 @@ if ($_SESSION["state"] == 1) {
         } elseif ($_POST['step'] == 3) {
 
             echo 'DONE';
+
+            echo ' ' . $_POST['topic'] . '';
+            echo ' ' . $_POST['message'] . '';
 
             //        echo '            <label for="serial">S/N:</label> ';
             //        if ($_POST['name'] != "Bike ausw&auml;hlen") {
@@ -155,6 +158,9 @@ if ($_SESSION["state"] == 1) {
         elseif ($_POST['step'] == 2) {
 
             echo 'DONE2';
+
+            echo ' ' . $_POST['topic'] . '';
+            echo ' ' . $_POST['message'] . '';
 
         }
     } else {
