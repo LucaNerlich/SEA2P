@@ -8,6 +8,7 @@ echo "<h1>Kontakt mit Hersteller aufnehmen</h1>";
 if ($_SESSION["state"] == 1) {
 
     /* variables */
+    $error = -1;
     $donothing = 0;
     $senddamage = 1;
     $sendmessage = 2;
@@ -106,7 +107,20 @@ if ($_SESSION["state"] == 1) {
             echo '</table>';
             echo '</form>';
 
-        } elseif ($_POST['step'] == 3) {
+        } elseif ($_POST['step'] == 2 && $_POST['bike'] == $donothing) {
+
+            echo '<form action="contact.php" method="post">';
+
+            echo '<table>';
+            echo '<tr><td>BITTE EIN G&UumlLTIGES FAHRRAD AUSW&Auml;HLEN</td></tr>';
+            echo '<tr><td><input type="hidden" name="type" value="' . $senddamage . '"></td>';
+            echo '<tr><td><input type="hidden" name="bike" value="' . $error . '"></td>';
+            echo '<tr><td><input type="hidden" name="step" value="1"></td>';
+            echo '<td><input class="submit" type="submit" value="try again"></td></tr>';
+            echo '</form>';
+
+        }
+        elseif ($_POST['step'] == 3) {
 
             echo 'DONE';
 
