@@ -124,9 +124,39 @@ if ($_SESSION["state"] == 1) {
         }
     } elseif ($_POST['type'] == $sendmessage) {
 
-        echo 'test';
+        if ($_POST['step'] == 1) {
 
+            /* ID */
+            echo '<form action="contact.php" method="post">';
 
+            echo '<table style="width: 90%">';
+            echo '<tr><td><label for="userid">user id:</label></td>';
+            echo '<td>' . $_SESSION['user']['client_id'] . '</td></tr>';
+
+            /* NAME */
+            echo '<tr><td><label for="name">name:</label></td>';
+            echo '<td>' . $_SESSION['user']['name'] . ", " . $_SESSION['user']['surname'] . '</td></tr>';
+
+            /* TOPIC */
+            echo '<tr><td><label for="topic">topic:</label></td>';
+            echo '<td><input type="text" name="topic" size="30" maxlength="30"></td></tr>';
+
+            /* MESSAGE */
+            echo '<td><td><textarea name="message" maxlength="500" rows="10" style="width: 90%"></textarea></td></tr>';
+
+            /* BUTTON */
+            echo '<tr><td><input type="hidden" name="type" value="' . $sendmessage . '"></td>';
+            echo '<tr><td><input type="hidden" name="step" value="2"></td>';
+            echo '<td><input class="submit" type="submit" value="send"></td></tr>';
+            echo '</table>';
+            echo '</form>';
+        }
+
+        elseif ($_POST['step'] == 2) {
+
+            echo 'DONE2';
+
+        }
     } else {
         echo 'ausgeloggt!';
     }
