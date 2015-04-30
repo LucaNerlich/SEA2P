@@ -21,7 +21,7 @@ if ($_SESSION["state"] == 1) {
         echo '<table>';
         echo '<tr><td></td>';
         echo '<td><select name="type" size="1">';
-        echo '<option value="' . $donothing . '">-- bitte auswählen --</option>';
+        echo '<option value="' . $donothing . '">-- bitte ausw&auml;hlen --</option>';
         echo '<option value="' . $senddamage . '">Schadenmeldung</option>';
         echo '<option value="' . $sendmessage . '">Nachricht senden</option>';
         echo '</select></td>';
@@ -45,7 +45,7 @@ if ($_SESSION["state"] == 1) {
 
             echo '<tr><td><label for="bike">bike:</label></td>';
             echo '<td><select name="bike" size="1">';
-            echo '<option>Bike ausw&auml;hlen</option>';
+            echo '<option value="' . $donothing . '">-- bitte ausw&auml;hlen --</option>';
 
             foreach ($bikes as $bike) {
                 echo '<option value="' . $bike["bike_id"] . '">' . $bike["name"] . '</option>';
@@ -59,7 +59,7 @@ if ($_SESSION["state"] == 1) {
 
             echo '</form>';
 
-        } elseif ($_POST['step'] == 2) {
+        } elseif ($_POST['step'] == 2 && $_POST['bike'] != $donothing) {
 
             /* ID */
             echo '<form action="contact.php" method="post">';
