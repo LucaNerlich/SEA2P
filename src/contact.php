@@ -15,7 +15,7 @@ if ($_SESSION["state"] == 1) {
 
 
     /* choose contact option */
-    if (!isset($_POST['step']) || $_POST['step'] = $donothing) {
+    if (!isset($_POST['step']) || $_POST['type'] = $donothing) {
 
         echo '<form action="contact.php" method="post">';
 
