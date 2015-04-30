@@ -122,7 +122,7 @@ if ($_SESSION["state"] == 1) {
             //echo '            <input type="text" id="serial" size="10" maxlength="10" pattern="[0-9]{10}">';
 
         }
-    } elseif ($_POST['type'] == $senddamage) {
+    } elseif ($_POST['type'] == $sendmessage) {
 
         echo 'test';
 
