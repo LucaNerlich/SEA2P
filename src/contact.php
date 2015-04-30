@@ -13,14 +13,24 @@ if ($_SESSION["state"] == 1) {
 
         echo '<table>';
         echo '<tr><td></td>';
-        echo '<td><select name="type" size="1">';
+        echo '<td><select name="type" size="2">';
 //echo '                <option>---</option>';
         echo '<option>Schadenmeldung</option>';
-//echo '               <option>Message</option>';
+        echo '<option>Nachricht senden</option>';
         echo '</select></td>';
 
-/* BIKE */
+        echo '<tr><td><input type="hidden" name="step" value="1"></td>';
+        echo '<td><input class="submit" type="submit" value="next"></td></tr>';
+        echo '</form>';
 
+    } elseif ($_POST['step'] == 1 && $_POST['type'] == "Schadenmeldung") {
+
+        echo '<form action="contact.php" method="post">';
+
+        echo '<table>';
+        echo '<tr><td></td>';
+
+        /* BIKE */
         $bikes = query("SELECT * FROM bike WHERE bike.client_id = '" . $_SESSION['user']['client_id'] . "'");
 
         echo '<tr><td><label for="bike">bike:</label></td>';
@@ -33,12 +43,12 @@ if ($_SESSION["state"] == 1) {
 
         echo '</select></td></tr>';
 
-        echo '<tr><td><input type="hidden" name="step" value="1"></td>';
+        echo '<tr><td><input type="hidden" name="step" value="2"></td>';
         echo '<td><input class="submit" type="submit" value="next"></td></tr>';
 
         echo '</form>';
 
-    } elseif ($_POST['step'] == 1) {
+    } elseif ($_POST['step'] == 2) {
 
         /* ID */
         echo '<form action="contact.php" method="post">';
@@ -79,12 +89,12 @@ if ($_SESSION["state"] == 1) {
         echo '<td><td><textarea name="message" maxlength="500" rows="10" style="width: 90%"></textarea></td></tr>';
 
         /* BUTTON */
-        echo '<tr><td><input type="hidden" name="step" value="2"></td>';
+        echo '<tr><td><input type="hidden" name="step" value="3"></td>';
         echo '<td><input class="submit" type="submit" value="send"></td></tr>';
         echo '</table>';
         echo '</form>';
 
-    } elseif ($_POST['step'] == 2) {
+    } elseif ($_POST['step'] == 3) {
 
         echo 'DONE';
 
