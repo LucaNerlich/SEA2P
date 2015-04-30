@@ -13,17 +13,17 @@ if ($_SESSION["state"] == 1) {
 
         echo '<table>';
         echo '<tr><td></td>';
-        echo '<td><select name="type" size="2">';
-//echo '                <option>---</option>';
-        echo '<option>Schadenmeldung</option>';
-        echo '<option>Nachricht senden</option>';
+        echo '<td><select name="type" size="1">';
+        echo '<option value="0">-- bitte auswählen --</option>';
+        echo '<option value="1">Schadenmeldung</option>';
+        echo '<option value="2">Nachricht senden</option>';
         echo '</select></td>';
 
         echo '<tr><td><input type="hidden" name="step" value="1"></td>';
         echo '<td><input class="submit" type="submit" value="next"></td></tr>';
         echo '</form>';
 
-    } elseif ($_POST['step'] == 1 && $_POST['type'] == "Schadenmeldung") {
+    } elseif ($_POST['step'] == 1 && $_POST['type'] == 1) {
 
         echo '<form action="contact.php" method="post">';
 
