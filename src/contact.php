@@ -36,7 +36,7 @@ if ($_SESSION["state"] == 1) {
 /* send damage */
     elseif ($_POST['type'] == $senddamage) {
 
-        if ($_POST['step'] == 1) {
+        if ($_POST['step'] == 1 || ( $_POST['step'] == 2 && $_POST['bike'] == $donothing) ) {
 
             echo '<form action="contact.php" method="post">';
 
