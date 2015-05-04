@@ -130,7 +130,7 @@ if ($_SESSION["state"] == 0) {
     echo "<div class='panel-body'>";
     echo "<table class='table table-striped'>";
     echo "<tr><th>Subject</th><th>Type</th><th>Created On</th><th></th></tr>";
-    $topics = query("SELECT  * from topic WHERE client_id = " . $_SESSION["user"]["client_id"] . " ORDER BY active DESC, created_on desc");
+    $topics = query("SELECT  * from topics WHERE client_id = " . $_SESSION["user"]["client_id"] . " ORDER BY active DESC, created_on desc");
     if (sizeof($topics) == 0) {
         echo "<tr><td colspan='4' style='text-align:center;'><i>Keine offenen oder geschlossenen Tickets bisher.</i></td></tr>";
     } else {
