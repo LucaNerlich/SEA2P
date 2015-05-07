@@ -135,7 +135,7 @@ if ($_SESSION["state"] == 0) {
         echo "<tr><td colspan='4' style='text-align:center;'><i>Keine offenen oder geschlossenen Tickets bisher.</i></td></tr>";
     } else {
         foreach ($topics as $topic) {
-            echo "<tr><td>" . $topic["subject"] . "</td><td>" . ($topic["type"] == 1 ? "Schaden" : "Kontakt") . "</td><td>" . $topic["created_on"] . " km</td><td>" . ($topic["active"] == 1 ? "<img src='graphic/y.png'>" : "") . "</td></tr>";
+            echo "<tr><td>" . $topic["subject"] . "</td><td>" . ($topic["type"] == 1 ? "Schaden" : "Kontakt") . "</td><td>" . date("d.m.Y H:i", strtotime($topic["created_on"])) . "</td><td>" . ($topic["active"] == 1 ? "<img src='graphic/y.png'>" : "") . "</td></tr>";
 
         }
     }

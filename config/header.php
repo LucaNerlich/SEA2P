@@ -72,7 +72,7 @@ if (isset($_GET["signout"])) {
                 } else {
                     echo '<li><a href="' . $src_extend . 'src/trip.php">Kilometer eintragen</a></li>';
                     echo '<li><a href="' . $src_extend . 'src/contact.php">Kontakt aufnehmen</a></li>';
-                    echo '<li><a href="http://141.22.29.119:9000/hipergate">Hipergate</a></li>';
+                    echo '<li><a href="http://141.22.29.119:9000/wawision">WaWision</a></li>';
 
                     if ($_SESSION["user"]["email"] == "lucasteffen.nerlich@haw-hamburg.de" || $_SESSION["user"]["email"] == "daniel.sommerlig@haw-hamburg.de" ||
                         $_SESSION["user"]["email"] == "fabian.simroth@haw-hamburg.de" || $_SESSION["user"]["email"] == "clemens.rassbach@haw-hamburg.de"

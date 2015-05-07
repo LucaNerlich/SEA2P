@@ -2897,6 +2897,9 @@ th {
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    
 }
 
 .table > thead > tr > th,
