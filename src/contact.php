@@ -110,11 +110,24 @@ echo "<h1>Kontakt mit Hersteller aufnehmen</h1>";
             echo '</form>';
 
         } elseif ($_POST['step'] == 3) {
+			$sql = "INSERT INTO topics (subject, client_id, type) VALUES ('" . escape($_POST["topic"]) . "'," . $_SESSION['user']['client_id'] . "," . $_POST["type"] . ")";
+            $topic_id = query($sql);
+            
+            $sql = "INSERT INTO message (client_sent, text, topic_id) VALUES (1,'" . escape("Folgender Artikel ist besch&auml;digt: " . $_POST["article"] . "\n".$_POST["message"]) . "',$topic_id)";
+            
+            if (query($sql) !== false)
+            {
+            	echo message("Nachricht erfolgreich versendet!",1);
+            }
+            else
+            {
+            	echo message("Es trat ein Fehler auf!",2);
+            }
+//             echo $topic_id;
+// 			echo 'DONE';
 
-            echo 'DONE';
-
-            echo ' ' . $_POST['topic'] . '';
-            echo ' ' . $_POST['message'] . '';
+//             echo ' ' . $_POST['topic'] . '';
+//             echo ' ' . $_POST['message'] . '';
 
             //        echo '            <label for="serial">S/N:</label> ';
             //        if ($_POST['name'] != "Bike ausw&auml;hlen") {
@@ -160,10 +173,19 @@ echo "<h1>Kontakt mit Hersteller aufnehmen</h1>";
 
         elseif ($_POST['step'] == 2) {
 
-            echo 'DONE2';
-
-            echo ' ' . $_POST['topic'] . '';
-            echo ' ' . $_POST['message'] . '';
+        $sql = "INSERT INTO topics (subject, client_id, type) VALUES ('" . escape($_POST["topic"]) . "'," . $_SESSION['user']['client_id'] . "," . $_POST["type"] . ")";
+            $topic_id = query($sql);
+            
+            $sql = "INSERT INTO message (client_sent, text, topic_id) VALUES (1,'" . escape($_POST["message"]) . "',$topic_id)";
+            
+            if (query($sql) !== false)
+            {
+            	echo message("Nachricht erfolgreich versendet!",1);
+            }
+            else
+            {
+            	echo message("Es trat ein Fehler auf!",2);
+            }
 
         }
     }
