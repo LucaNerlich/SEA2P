@@ -6,11 +6,15 @@ ctx = canvas.getContext("2d");
 max = 0;
 for (var i = 0; i < 13; i ++)
 {
+	//alert(statData[i]);
 	if (statData[i] > max)
 	{
+		//alert("max: " + max + " neu:" + statData[i]);
+		//alert(typeof statData[i]);
 		max = statData[i];
 	}
 }
+
 
 // translate Height To Canvas
 function tH(pH)
@@ -24,7 +28,6 @@ function redraw()
 	h = ctx.canvas.clientHeight;
 	ctx.canvas.width  = w;
 	ctx.canvas.height = h;
-	
 	//ctx.clear(0,0,w,h);
 	var grd = ctx.createLinearGradient(0, 0, 0, h);
 	grd.addColorStop(0,"#fafafa"); //9C6363
@@ -39,7 +42,7 @@ function redraw()
 	partH = h / 5;
 
 	
-
+	// Hintergrundlinien einzeichen
 	ctx.beginPath();
 	ctx.strokeStyle = "#aaa";
 	ctx.lineWidth = 1;
@@ -49,6 +52,7 @@ function redraw()
 		ctx.lineTo(w,partH * i);
 		ctx.stroke();
 	}
+	
 	ctx.beginPath();
 	ctx.strokeStyle = "#297ACC";
 	ctx.lineWidth = 4;

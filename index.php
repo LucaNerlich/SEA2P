@@ -115,7 +115,7 @@ if ($_SESSION["state"] == 0) {
     echo '<script type="text/javascript">';
     echo 'var statData = new Array ();' . "\n";
     foreach ($statData as $key => $data) {
-        echo 'statData.push("' . $data . '");' . "\n";
+        echo 'statData.push(' . $data . ');' . "\n";
         //echo 'statData["' . $key . '"] = "' . $data . '";' . "\n";
     }
     echo '</script>';
