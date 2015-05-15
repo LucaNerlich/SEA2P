@@ -2,7 +2,7 @@
 include 'config/config.php';
 include 'config/header.php';
 
-echo 'hallo';
+echo "hallo";
 
 include 'config/footer.php';
 ?>

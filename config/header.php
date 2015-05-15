@@ -85,9 +85,7 @@ if (isset($_GET["signout"])) {
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                if ($_SESSION["state"] == 1 && ($_SESSION["user"]["email"] == "lucasteffen.nerlich@haw-hamburg.de" || $_SESSION["user"]["email"] == "daniel.sommerlig@haw-hamburg.de" ||
-                    $_SESSION["user"]["email"] == "fabian.simroth@haw-hamburg.de" || $_SESSION["user"]["email"] == "clemens.rassbach@haw-hamburg.de"
-                )) {
+                if ($_SESSION["state"] == 1) {
                     echo '<li><a href="' . $src_extend . 'src/signin.php?signout">Sign Out</a></li>';
                     echo '<li style="padding:15px 10px;color: #eee;">Moin, ' . $_SESSION["user"]["surname"] . '</li>';
                 }
