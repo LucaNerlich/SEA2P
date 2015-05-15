@@ -78,6 +78,7 @@ if (isset($_GET["signout"])) {
                         $_SESSION["user"]["email"] == "fabian.simroth@haw-hamburg.de" || $_SESSION["user"]["email"] == "clemens.rassbach@haw-hamburg.de"
                     ) {
                         echo '<li><a href="' . $src_extend . 'src/register.php">Register User</a></li>';
+                        echo '<li><a href="' . $src_extend . 'src/editUser.php">Edit User</a></li>';
                     }
                 }
                 ?>
