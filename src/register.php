@@ -10,14 +10,14 @@ if ($_SESSION["user"]["email"] == "lucasteffen.nerlich@haw-hamburg.de" || $_SESS
         $surname = $_POST["surname"];
         $firstname = $_POST["firstname"];
         $email = $_POST["email"];
-        $password = $_POST["password"];
+        $password = md5($_POST["password"]);
         $streetname = $_POST["streetname"];
         $streetnumber = intval($_POST["streetnumber"]);
         $zipcode = intval($_POST["zipcode"]);
         $city = $_POST["city"];
         $telephonenumber = $_POST["telephoneNumber"];
 
-        query("INSERT INTO client (surname, name, email, password, street, streetnumber, zipcode, city, telephone) VALUES ($surname, $firstname, $email, $password, $streetname, $streetnumber, $zipcode, $city, $telephonenumber)");
+        query("INSERT INTO client (surname, name, email, password, street, streetnumber, zipcode, city, telephone) VALUES ($surname, $firstname,'test@test.de', $password, $streetname, $streetnumber, $zipcode, $city, $telephonenumber)");
 
         echo message("Eintrag erfolgreich!", 1);
     } else {
