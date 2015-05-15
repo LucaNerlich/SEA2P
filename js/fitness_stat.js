@@ -45,11 +45,15 @@ function redraw()
 	// Hintergrundlinien einzeichen
 	ctx.beginPath();
 	ctx.strokeStyle = "#aaa";
+	ctx.fillStyle = "#aaa";
 	ctx.lineWidth = 1;
 	for (var i = 1; i < 5; i ++)
 	{
-		ctx.moveTo(0,partH * i);
-		ctx.lineTo(w,partH * i);
+		ctx.font = "20px Verdana";
+		ctx.fillText(Math.round((max/6)*(6-i)),10,partH * i + 8);
+		ctx.moveTo(60,partH * i);
+		ctx.lineTo(w-60,partH * i);
+		ctx.fillText(Math.round((max/6)*(6-i)),w-50,partH * i + 8);
 		ctx.stroke();
 	}
 	
