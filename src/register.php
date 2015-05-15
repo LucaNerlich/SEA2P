@@ -5,15 +5,34 @@ include '../config/header.php';
 if ($_SESSION["user"]["email"] == "lucasteffen.nerlich@haw-hamburg.de" || $_SESSION["user"]["email"] == "daniel.sommerlig@haw-hamburg.de" ||
     $_SESSION["user"]["email"] == "fabian.simroth@haw-hamburg.de" || $_SESSION["user"]["email"] == "clemens.rassbach@haw-hamburg.de"
 ) {
+
+    if (isset($_POST["submit"])) {
+        $surname = $_POST["surname"];
+        $firstname = $_POST["firstname"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $streetname = $_POST["streetname"];
+        $streetnumber = intval($_POST["streetnumber"]);
+        $zipcode = intval($_POST["zipcode"]);
+        $city = $_POST["city"];
+        $telephonenumber = $_POST["telephoneNumber"];
+
+        query("INSERT INTO client (surname, name, email, password, street, streetnumber, zipcode, city, telephone) VALUES ($surname, $firstname, $email, $password, $streetname, $streetnumber, $zipcode, $city, $telephonenumber)");
+
+        echo message("Eintrag erfolgreich!", 1);
+    } else {
+        echo message("Deine Eingaben sind fehlerhaft!", 2);
+    }
+
     echo '<div id="phone" class="centered">';
     echo "<h2 class='form-signin-heading'>Please provide the following information</h2>";
     echo "<form class='form-signin' action='register.php' method='post'>";
 
     echo '<label for="inputEmail" class="sr-only">E-Mail address</label>';
-    echo '<input type="email" name="email" id="inputEmail" style="margin: 2px" class="form-control" placeholder="E-Mail address" required autofocus>';
+    echo '<input type="email" id="inputEmail" name="email" style="margin: 2px" class="form-control" placeholder="E-Mail address" required autofocus>';
 
     echo '<label for="inputPassword" class="sr-only">Password</label>';
-    echo '<input type="password" id="inputPassword" style="margin: 2px" name="password" class="form-control" placeholder="Password" required>';
+    echo '<input type="password" id="inputPassword" name="password" style="margin: 2px" name="password" class="form-control" placeholder="Password" required>';
 
     echo '<label for="surname" class="sr-only">Surname</label>';
     echo '<input type="text" id="surname" name="surname" style="margin: 2px" class="form-control" placeholder="Surname" aria-describedby="basic-addon1" required>';
@@ -45,7 +64,7 @@ if ($_SESSION["user"]["email"] == "lucasteffen.nerlich@haw-hamburg.de" || $_SESS
     echo ' <input type="text" id="telephoneNumber" name="telephoneNumber" style="margin: 2px" class="form-control" placeholder="Telephone No." aria-label="Telephone No.">';
     echo '</div>';
 
-    echo '<button class="btn btn-lg btn-primary btn-block" type="submit" style="margin: 2px">Register User</button>';
+    echo '<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" style="margin: 2px">Register User</button>';
     echo '</div>';
     echo "</form>";
     echo '</div>';
