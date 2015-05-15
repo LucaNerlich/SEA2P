@@ -18,6 +18,7 @@ echo "<input class='submit' type='submit' value='Kunden auswaehlen!'>";
 echo "</form>";
 
 if (isset($_POST["client"])){
+    // $kunde hier nicht gesetzt. Soll der aktuell oben (ausm select) ausgewaehlte sein.
     $bike = query("SELECT * FROM bike WHERE client_id = " . $_kunde["client_id"]);
     echo "<table>";
     echo "<tr>";
