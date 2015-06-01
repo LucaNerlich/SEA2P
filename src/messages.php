@@ -30,14 +30,17 @@ if ($_SESSION["state"] == 1)
 	{
 		echo "<h1>" . $topic["subject"] . "</h1></div>";
 		echo "<div class='panel panel-default'>";
+		echo "<table class='table table-striped'>";
+		echo "<tr><th>Nachricht</th><th>Datum</th><th>Wer</th></tr>";
 		
 		foreach ($messages as $message)
 		{
-			echo "<div class='panel-heading'><h2>" . ($messsage["client_sent"]==1?"Du":"Wir") . " am " . $message["created_on"] . "</h2></div>";
-			echo "<div class='panel-body'>" . $message["text"] . "</div>";
-		
+// 			echo "<div class='panel-heading'><h2>" . ($messsage["client_sent"]==0?"Wir":"Du") . " am " . $message["created_on"] . "</h2></div>";
+// 			echo "<div class='panel-body'>" . $message["text"] . "</div>";
+			echo "<tr><td>" . $message["text"] . "</td><td>" .  $message["created_on"] . "</td><td>" . ($messsage["client_sent"]==0?"Wir":"Du") . "</td></tr>";
 		}
-		
+
+		echo "</table>";
 		echo "</div>";
 	}
 	else
