@@ -16,7 +16,8 @@ if ($_SESSION["state"] == 1)
 		$topic = query("SELECT * FROM topics WHERE topic_id = $message_id");
 		if (sizeof($topic) > 0)
 		{
-			$messags = query("SELECT * FROM message WHERE topic_id = " . $message_id);
+			$topic = $topic[0];
+			$messages = query("SELECT * FROM message WHERE topic_id = " . $message_id);
 		}
 		else
 		{
