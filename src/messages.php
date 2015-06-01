@@ -41,7 +41,18 @@ if ($_SESSION["state"] == 1)
 	}
 	else
 	{
-		echo "<h1>Deine Nachrichten</h1>";
+		echo "<h1>Deine Nachrichten</h1></div>";
+		$topics = query("SELECT * FROM topics WHERE client_id = " . $_SESSION["user"]["client_id"]);
+		echo "<div class='panel panel-default'>";
+		
+		foreach ($topics as $topic)
+		{
+			echo "<div class='panel-heading'><h2>" . $topic["created_on"] . ", Typ: " . ($topic["type"]==1?"Schadenmeldung":"Kontaktaufnahme") . "</h2></div>";
+			echo "<div class='panel-body'><a href='messages.php?topic_id=" . $topic["topic_id"] . "'>" . $topic["subject"] . "</a></div>";
+		
+		}
+		
+		echo "</div>";
 	}
 
 }
