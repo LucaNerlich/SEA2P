@@ -77,7 +77,7 @@ if (isset($_GET["signout"])) {
                     if ($_SESSION["user"]["email"] == "lucasteffen.nerlich@haw-hamburg.de" || $_SESSION["user"]["email"] == "daniel.sommerlig@haw-hamburg.de" ||
                         $_SESSION["user"]["email"] == "fabian.simroth@haw-hamburg.de" || $_SESSION["user"]["email"] == "clemens.rassbach@haw-hamburg.de"
                     ) {
-                        echo '<li><a href="http://141.22.29.119:9000/wawision">WaWision</a></li>';
+                        //echo '<li><a href="http://141.22.29.119:9000/wawision">WaWision</a></li>';
                         echo '<li><a href="' . $src_extend . 'src/register.php">Register User</a></li>';
                         echo '<li><a href="' . $src_extend . 'src/editUser.php">Edit User</a></li>';
                     }
