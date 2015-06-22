@@ -121,7 +121,7 @@ if (isset($_GET["trip"]))
 	echo "<div class='panel-heading'><h2>Dein Track</h2></div>";
 	echo "<div class='panel-body'>";
 	echo '<script type="text/javascript" src="../assets/GM_Utils/GPX2GM.js"></script>';
-	echo '<div id="map" class="gpxview:../../usertracks/' . $file . ':Karte" style="width:500px;height:300px"></div><p>';
+	echo '<div id="map" class="gpxview:/usertracks/' . $file . ':Karte" style="width:500px;height:300px"></div><p>';
 	//echo '<div id="map_wp" style="width:400px;height:300px"></div></p>';
 	echo "</div>";
 }
