@@ -1,5 +1,5 @@
 <?php
-$src_extend = strpos($_SERVER["REQUEST_URI"], "src/") ? "../" : "";
+$src_extend = strpos($_SERVER["REQUEST_URI"], "src/")||strpos($_SERVER["REQUEST_URI"], "usertracks/") ? "../" : "";
 if (isset($_GET["signout"])) {
     unset($_SESSION["user"]);
     $_SESSION["state"] = 0;
@@ -70,7 +70,7 @@ if (isset($_GET["signout"])) {
                 if ($_SESSION["state"] == 0) {
                     echo '<li><a href="' . $src_extend . 'src/signin.php">Sign In</a></li>';
                 } else {
-                    echo '<li><a href="' . $src_extend . 'src/trip.php">Kilometer eintragen</a></li>';
+                    echo '<li><a href="' . $src_extend . 'usertracks/trip.php">Kilometer eintragen</a></li>';
                     echo '<li><a href="' . $src_extend . 'src/contact.php">Kontakt aufnehmen</a></li>';
                     echo '<li><a href="' . $src_extend . 'src/messages.php">Nachrichten</a></li>';
 
