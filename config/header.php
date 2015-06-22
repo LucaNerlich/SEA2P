@@ -70,7 +70,7 @@ if (isset($_GET["signout"])) {
                 if ($_SESSION["state"] == 0) {
                     echo '<li><a href="' . $src_extend . 'src/signin.php">Sign In</a></li>';
                 } else {
-                    echo '<li><a href="' . $src_extend . 'usertracks/trip.php">Kilometer eintragen</a></li>';
+                    echo '<li><a href="' . $src_extend . 'src/trip.php">Kilometer eintragen</a></li>';
                     echo '<li><a href="' . $src_extend . 'src/contact.php">Kontakt aufnehmen</a></li>';
                     echo '<li><a href="' . $src_extend . 'src/messages.php">Nachrichten</a></li>';
 
