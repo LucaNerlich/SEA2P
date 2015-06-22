@@ -117,12 +117,11 @@ echo "<div class='panel panel-default'>";
 
 if (isset($_GET["trip"]))
 {
-	$file = $_SESSION["user"]["client_id"] . "__" . $_GET["trip"] . ".gpx";
-	echo $file;
+	$file = "../usertracks/" . $_SESSION["user"]["client_id"] . "__" . $_GET["trip"] . ".gpx";
 	echo "<div class='panel-heading'><h2>Dein Track</h2></div>";
 	echo "<div class='panel-body'>";
 	echo '<script type="text/javascript" src="../assets/GM_Utils/GPX2GM.js"></script>';
-	echo '<div id="map" class="gpxview:../usertracks/' . $file . ':Karte" style="width:500px;height:300px"></div><p>';
+	echo '<div id="map" class="gpxview:' . $file . ':Karte" style="width:500px;height:300px"></div><p>';
 	echo '<div id="map_wp" style="width:500px;height:300px"></div></p>';
 	echo "</div>";
 }
