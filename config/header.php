@@ -1,5 +1,5 @@
 <?php
-$src_extend = strpos($_SERVER["REQUEST_URI"], "src/")||strpos($_SERVER["REQUEST_URI"], "usertracks/") ? "../" : "";
+$src_extend = strpos($_SERVER["REQUEST_URI"], "src/") ? "../" : "";
 if (isset($_GET["signout"])) {
     unset($_SESSION["user"]);
     $_SESSION["state"] = 0;
